@@ -4,253 +4,524 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lama Aljohani | Cybersecurity Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0d1117;
-            --container-bg: #161b22;
-            --text-primary: #c9d1d9;
-            --text-secondary: #8b949e;
-            --accent-color: #2ea043; /* Cyber Green */
-            --accent-hover: #3fb950;
-            --border-color: #30363d;
+            --text-main: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.7);
+            --glass-bg: rgba(12, 8, 24, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.15);
+            --glass-highlight: rgba(255, 255, 255, 0.3);
+            --bg-dark: #05030a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
             line-height: 1.6;
-            margin: 0;
-            padding: 0;
         }
 
-        header {
-            text-align: center;
-            padding: 4rem 2rem;
-            background: linear-gradient(180deg, rgba(46,160,67,0.1) 0%, var(--bg-color) 100%);
-            border-bottom: 1px solid var(--border-color);
+        /* Section Layouts with Parallax Effect */
+        .parallax-top {
+            background: linear-gradient(to bottom, rgba(5,3,10,0.3) 70%, var(--bg-dark) 100%), 
+                        url('https://i.pinimg.com/1200x/46/0d/46/460d4645de83579c031c41332f4acad2.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            padding-top: 6rem;
+            padding-bottom: 4rem;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.8rem;
-            color: #ffffff;
+        .color-gap {
+            /* Deep ethereal gradient matching the palette */
+            background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(30,15,45,0.7) 50%, var(--bg-dark) 100%);
+            padding: 5rem 0;
         }
 
-        header p {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            margin-top: 10px;
+        .parallax-bottom {
+            background: linear-gradient(to top, rgba(5,3,10,0.3) 70%, var(--bg-dark) 100%), 
+                        url('https://i.pinimg.com/736x/75/6e/93/756e936e2354d27fb585e835a2b159a5.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+            padding: 5rem 0 8rem;
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 0 2rem;
+            position: relative;
         }
 
-        section {
-            background-color: var(--container-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
+        /* Glassmorphism Panel */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(35px) saturate(120%);
+            -webkit-backdrop-filter: blur(35px) saturate(120%);
+            border: 1px solid var(--glass-border);
+            border-radius: 32px;
+            padding: 3rem;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-panel:hover {
+            border-color: var(--glass-highlight);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(138, 43, 226, 0.15);
+        }
+
+        /* Typography */
+        header {
+            text-align: center;
+            margin-bottom: 6rem;
+            animation: fadeUp 1s ease-out;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 500;
+            letter-spacing: -1px;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: #d1d5db;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 2.5rem;
+            text-transform: uppercase;
         }
 
         h2 {
-            color: var(--accent-color);
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
-            margin-top: 0;
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            color: #ffffff;
+            letter-spacing: 0.5px;
         }
 
-        .badge {
-            display: inline-block;
-            background-color: rgba(46, 160, 67, 0.15);
-            color: var(--accent-color);
-            border: 1px solid var(--accent-color);
-            padding: 0.5rem 1rem;
+        /* Seamless Buttons */
+        .btn-seamless {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 0.8rem 2.2rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 300;
+            text-decoration: none;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-seamless:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Top Certification Layout */
+        .cert-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media(max-width: 768px) {
+            .cert-layout { grid-template-columns: 1fr; }
+        }
+
+        .cert-img {
+            width: 100%;
             border-radius: 20px;
-            font-weight: bold;
-            font-size: 1.1rem;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            transition: 0.5s ease;
+        }
+
+        .cert-img:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 45px rgba(0,0,0,0.5);
+        }
+
+        .cert-details h3 {
+            font-size: 1.7rem;
+            font-weight: 400;
             margin-bottom: 1rem;
         }
 
-        .project {
+        .cert-details p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            font-weight: 300;
             margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
         }
 
-        .project:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
+        .cert-meta {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
         }
 
-        .project h3 {
-            margin: 0 0 10px 0;
-            color: #ffffff;
+        /* Motion Gallery for Projects */
+        .motion-gallery {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            padding: 1rem 0.5rem 2rem;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
 
-        .project-link {
-            display: inline-block;
-            margin-top: 10px;
-            color: var(--bg-color);
-            background-color: var(--accent-color);
-            padding: 5px 15px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            transition: background-color 0.3s;
+        .motion-gallery::-webkit-scrollbar {
+            display: none;
         }
 
-        .project-link:hover {
-            background-color: var(--accent-hover);
+        .motion-card {
+            min-width: 360px;
+            flex-shrink: 0;
+            scroll-snap-align: center;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.4s ease;
+            position: relative;
         }
 
-        .skills-list {
+        @media(max-width: 768px) {
+            .motion-card { min-width: 300px; }
+        }
+
+        .motion-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: var(--glass-highlight);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+        }
+
+        .card-preview {
+            width: 100%;
+            height: 190px;
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .card-preview iframe, .card-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: none;
+            opacity: 0.7;
+            transition: 0.5s ease;
+            pointer-events: none;
+        }
+
+        .motion-card:hover .card-preview iframe, 
+        .motion-card:hover .card-preview img {
+            opacity: 1;
+            transform: scale(1.08);
+        }
+
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: #fff;
+            letter-spacing: 0.5px;
+        }
+
+        .card-body {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .card-body h3 {
+            font-size: 1.25rem;
+            font-weight: 400;
+            margin-bottom: 0.8rem;
+        }
+
+        .card-body p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        /* Grid Layout for Leadership */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+        }
+
+        .info-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .info-card h3 {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #fff;
+        }
+
+        .info-card .card-subtitle {
+            margin-bottom: 1.2rem;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .info-card p {
+            color: var(--text-muted);
+            font-weight: 300;
+            font-size: 0.95rem;
+        }
+
+        /* Skills Flex */
+        .skills-flex {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            list-style: none;
-            padding: 0;
+            gap: 1rem;
         }
 
-        .skills-list li {
-            background: var(--bg-color);
-            border: 1px solid var(--border-color);
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 0.9rem;
+        .skill-pill {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--glass-border);
+            color: rgba(255,255,255,0.8);
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 300;
+            transition: 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        .contact-info {
-            list-style: none;
-            padding: 0;
+        .skill-pill:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
         }
 
-        .contact-info li {
-            margin-bottom: 10px;
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .scroll-hint {
+            text-align: right;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 1rem;
+            font-weight: 300;
         }
 
-        .contact-info a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Lama Aljohani</h1>
-        <p>Cybersecurity Specialist | Proactive Defense & Application Security</p>
-    </header>
-
-    <div class="container">
-        
-        <!-- القسم الأول: الشهادات كما طلبتِ -->
-        <section id="certification">
-            <h2>🏆 Top Certification</h2>
-            <div class="badge">🛡️ CompTIA Security+ (SY0-701)</div>
-            <p>Certified professional with proven knowledge in securing networks, risk management, and proactive cyber defense.</p>
-        </section>
-
-        <!-- القسم الثاني: النبذة -->
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Highly motivated Cybersecurity student at Taibah University with an outstanding GPA (4.66/5.00). Passionate about proactive defense, risk assessment, and building secure systems. Experienced in simulating network attacks, finding software vulnerabilities, and developing interactive security labs using Python and Java.</p>
-        </section>
-
-        <!-- القسم الثالث: المشاريع (مدمج فيها السيرة وتقرير اللاب) -->
-        <section id="projects">
-            <h2>Featured Projects & Security Labs</h2>
+    <!-- Top Section: Header, Certification & Projects -->
+    <div class="parallax-top">
+        <div class="container">
             
-            <div class="project">
-                <h3>CyberRun: Interactive Cybersecurity Academy</h3>
-                <p>Developed an integrated learning platform featuring interactive 'War Room' labs for Incident Response training. Built specialized tools for Password Strength Checking and URL Security Scanning.</p>
-                <a href="https://unsadeem2-pixel.github.io/CyberRun/index.html" target="_blank" class="project-link">View Project Live</a>
-            </div>
+            <header>
+                <h1>Lama Aljohani</h1>
+                <p class="subtitle">Cybersecurity Senior</p>
+                <a href="cv.pdf" target="_blank" class="btn-seamless">Download Resume</a>
+            </header>
 
-            <div class="project">
-                <h3>Software Security & Penetration Testing Labs</h3>
-                <p>Conducted extensive hands-on security labs covering web, mobile, and cryptographic vulnerabilities. 
-                <ul>
-                    <li><strong>Web Sec:</strong> Simulated and mitigated SQL Injections, implemented secure Flask & MySQL login systems with MFA (Google Authenticator) and session management.</li>
-                    <li><strong>Cryptography:</strong> Applied Symmetric (Caesar Cipher) and Asymmetric (RSA) encryption manually and programmatically.</li>
-                    <li><strong>Vulnerability Analysis:</strong> Utilized SonarQube to detect and exploit Command Injections and DoS attacks in Java applications.</li>
-                    <li><strong>Mobile Sec:</strong> Simulated Man-in-the-Middle (MitM) attacks, testing secure SHA-256 payload hashing and data-in-transit integrity checks.</li>
-                </ul>
-                </p>
-            </div>
+            <section class="glass-panel" style="margin-bottom: 3rem;">
+                <h2>Professional Certification</h2>
+                <div class="cert-layout">
+                    <div>
+                        <img src="security_plus.jpg" alt="CompTIA Security+" class="cert-img">
+                    </div>
+                    <div class="cert-details">
+                        <h3>CompTIA Security+ (SY0-701)</h3>
+                        <p>Certified professional with proven expertise in network architecture, risk management, threat mitigation, and proactive enterprise defense.</p>
+                        <div class="cert-meta">
+                            Candidate ID: COMP001022977471 <br>
+                            Issued: Jan 27, 2026 — Expires: Jan 27, 2029
+                        </div>
+                        <a href="http://verify.CompTIA.org" target="_blank" class="btn-seamless">Verify Credential</a>
+                    </div>
+                </div>
+            </section>
 
-            <div class="project">
-                <h3>DES Cryptography Tool</h3>
-                <p>Built a Java-based implementation of the Data Encryption Standard (DES) algorithm in ECB mode for secure text encryption. Designed a user-friendly GUI for real-time text transformation and Base64 encoding.</p>
-            </div>
+            <section class="glass-panel">
+                <h2>Projects & Security Research</h2>
+                <p class="scroll-hint">Swipe to explore horizontally</p>
+                
+                <div class="motion-gallery">
+                    <div class="motion-card">
+                        <div class="card-preview">
+                            <span class="badge">Live Platform</span>
+                            <img src="project_cyberrun.png" alt="CyberRun">
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <h3>CyberRun Academy</h3>
+                                <p>An interactive cybersecurity learning platform featuring immersive 'War Room' labs specifically designed for Incident Response training and simulations.</p>
+                            </div>
+                            <a href="https://unsadeem2-pixel.github.io/CyberRun/index.html" target="_blank" class="btn-seamless" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; align-self: flex-start;">Preview Live</a>
+                        </div>
+                    </div>
 
-            <div class="project">
-                <h3>DDoS Attack Simulation</h3>
-                <p>Created a Java simulation to analyze the impact of HTTP Flood attacks on local servers. Successfully documented network stress behaviors and proposed mitigation strategies including traffic filtering.</p>
-            </div>
-        </section>
+                    <div class="motion-card">
+                        <div class="card-preview">
+                            <span class="badge">Research Paper</span>
+                            <iframe src="DES Algorithm Project Report.pdf" scrolling="no"></iframe>
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <h3>DES Cryptography</h3>
+                                <p>A comprehensive Java-based implementation of the Data Encryption Standard (DES) algorithm in ECB mode, ensuring secure text encryption mechanisms.</p>
+                            </div>
+                            <a href="DES Algorithm Project Report.pdf" target="_blank" class="btn-seamless" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; align-self: flex-start;">Read Paper</a>
+                        </div>
+                    </div>
 
-        <!-- القسم الرابع: المهارات -->
-        <section id="skills">
-            <h2>Technical Skills</h2>
-            <ul class="skills-list">
-                <li>Cyber Defense</li>
-                <li>Risk Management</li>
-                <li>Network Security</li>
-                <li>Python</li>
-                <li>Java</li>
-                <li>SQL / MySQL</li>
-                <li>Flask</li>
-                <li>Linux</li>
-                <li>Wireshark</li>
-                <li>Nmap</li>
-                <li>Metasploit</li>
-                <li>Burp Suite</li>
-            </ul>
-        </section>
+                    <div class="motion-card">
+                        <div class="card-preview">
+                            <span class="badge">Analysis</span>
+                            <iframe src="OsProject 1.pdf" scrolling="no"></iframe>
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <h3>Windows OS Architecture</h3>
+                                <p>An in-depth comparative analysis evaluating the evolution of security measures, vulnerabilities, and architecture from Windows 1.0 through Windows 11.</p>
+                            </div>
+                            <a href="OsProject 1.pdf" target="_blank" class="btn-seamless" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; align-self: flex-start;">Read Paper</a>
+                        </div>
+                    </div>
 
-        <!-- القسم الخامس: الخبرات والتعليم -->
-        <section id="experience-education">
-            <h2>Experience & Education</h2>
-            <p><strong>Bachelor in Cybersecurity</strong> — Taibah University (Expected May 2027)</p>
-            <ul>
-                <li>Leader of the Design Department at <em>Cyber She</em>.</li>
-                <li>Course Instructor for Java Programming at <em>Tmyyoz</em>.</li>
-            </ul>
-        </section>
-
-        <!-- القسم السادس: التواصل -->
-        <section id="contact">
-            <h2>Contact & Links</h2>
-            <ul class="contact-info">
-                <li>📧 <strong>Email:</strong> <a href="mailto:lama.aljohani002@gmail.com">lama.aljohani002@gmail.com</a></li>
-                <li>🔗 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/lama-aljohani" target="_blank">linkedin.com/in/lama-aljohani</a></li>
-                <li>📱 <strong>Phone:</strong> 0564843498</li>
-            </ul>
-        </section>
-
+                    <div class="motion-card">
+                        <div class="card-preview">
+                            <span class="badge">Lab Report</span>
+                            <iframe src="LabReport.pdf" scrolling="no"></iframe>
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <h3>Software Security Labs</h3>
+                                <p>Extensive documentation on Web and Mobile security testing, detailing SQL injection mitigation, MFA implementation, and SHA-256 integrity verification.</p>
+                            </div>
+                            <a href="LabReport.pdf" target="_blank" class="btn-seamless" style="padding: 0.6rem 1.5rem; font-size: 0.85rem; align-self: flex-start;">Read Report</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Lama Aljohani. All Rights Reserved.</p>
-    </footer>
+    <!-- Middle Section: Color Gap & Leadership -->
+    <div class="color-gap">
+        <div class="container">
+            <section class="glass-panel">
+                <h2>Leadership & Experience</h2>
+                <div class="grid-layout">
+                    
+                    <div class="info-card">
+                        <h3>Design Dept Leader</h3>
+                        <p class="card-subtitle">Cyber She Community</p>
+                        <p style="margin-bottom: 1.5rem;">Directed the design department throughout 2024, driving visual branding, creating high-impact assets, and fostering community engagement in cybersecurity.</p>
+                        <a href="https://www.linkedin.com/company/cyber-she/" target="_blank" class="btn-seamless" style="padding: 0.5rem 1.2rem; font-size: 0.8rem;">View Platform</a>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Java Programming Instructor</h3>
+                        <p class="card-subtitle">Tmyyoz Platform</p>
+                        <p>Mentored students through Java 1 fundamentals. Focused on Object-Oriented Programming (OOP), problem-solving strategies, and writing clean, scalable code while designing interactive learning materials to simplify algorithmic thinking.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>CTF Competitor</h3>
+                        <p class="card-subtitle">Cyber Arcade - Jeddah University</p>
+                        <p>Active participant in competitive Capture The Flag events, specializing in Open-Source Intelligence (OSINT) and Web Exploitation challenges.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Technical Workshops</h3>
+                        <p class="card-subtitle">Continuous Learning</p>
+                        <p>Completed intensive training including Linux file systems and Bash scripting (Cyber Guard), alongside foundational cybersecurity bootcamps (Saudi Developers Community).</p>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Bottom Section: Core Competencies -->
+    <div class="parallax-bottom">
+        <div class="container">
+            <section class="glass-panel">
+                <h2>Core Competencies</h2>
+                <div class="skills-flex">
+                    <span class="skill-pill">Cyber Defense</span>
+                    <span class="skill-pill">Risk Management</span>
+                    <span class="skill-pill">Network Security</span>
+                    <span class="skill-pill">Incident Response</span>
+                    <span class="skill-pill">Python & Java</span>
+                    <span class="skill-pill">SQL & Flask</span>
+                    <span class="skill-pill">Wireshark & Nmap</span>
+                    <span class="skill-pill">Burp Suite</span>
+                    <span class="skill-pill">Linux Administration</span>
+                </div>
+            </section>
+        </div>
+    </div>
 
 </body>
 </html>

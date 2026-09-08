@@ -1,54 +1,256 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ملفي الشخصي</title>
+    <title>Lama Aljohani | Cybersecurity Portfolio</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
-        header { background: #2c3e50; color: #fff; text-align: center; padding: 2rem 0; }
-        header h1 { margin: 0; font-size: 2.5rem; }
-        header p { margin: 5px 0 0; font-size: 1.2rem; color: #1abc9c; }
-        .container { width: 80%; margin: auto; overflow: hidden; padding: 2rem 0; }
-        .section { background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        a { color: #1abc9c; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        :root {
+            --bg-color: #0d1117;
+            --container-bg: #161b22;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-color: #2ea043; /* Cyber Green */
+            --accent-hover: #3fb950;
+            --border-color: #30363d;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(180deg, rgba(46,160,67,0.1) 0%, var(--bg-color) 100%);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            color: #ffffff;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background-color: var(--container-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: rgba(46, 160, 67, 0.15);
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .project {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .project:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .project h3 {
+            margin: 0 0 10px 0;
+            color: #ffffff;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--bg-color);
+            background-color: var(--accent-color);
+            padding: 5px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .project-link:hover {
+            background-color: var(--accent-hover);
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills-list li {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+
+        .contact-info {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-info li {
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>اسمك هنا</h1>
-        <p>مطور ويب | مبرمج | (اكتب تخصصك)</p>
+        <h1>Lama Aljohani</h1>
+        <p>Cybersecurity Specialist | Proactive Defense & Application Security</p>
     </header>
 
     <div class="container">
-        <!-- قسم النبذة -->
-        <div class="section">
-            <h2>عني</h2>
-            <p>أنا مبرمج شغوف ببناء تطبيقات ومواقع تفاعلية. أمتلك خبرة في (اكتب مهاراتك هنا مثل HTML, CSS, JavaScript). أبحث دائماً عن تحديات جديدة لتطوير مهاراتي.</p>
-        </div>
+        
+        <!-- القسم الأول: الشهادات كما طلبتِ -->
+        <section id="certification">
+            <h2>🏆 Top Certification</h2>
+            <div class="badge">🛡️ CompTIA Security+ (SY0-701)</div>
+            <p>Certified professional with proven knowledge in securing networks, risk management, and proactive cyber defense.</p>
+        </section>
 
-        <!-- قسم المشاريع -->
-        <div class="section">
-            <h2>أبرز مشاريعي</h2>
-            <ul>
-                <li><strong>مشروع 1:</strong> <a href="#">رابط المشروع</a> - وصف سطر واحد عن المشروع.</li>
-                <li><strong>مشروع 2:</strong> <a href="#">رابط المشروع</a> - وصف سطر واحد عن المشروع.</li>
-                <li><strong>مشروع 3:</strong> <a href="#">رابط المشروع</a> - وصف سطر واحد عن المشروع.</li>
+        <!-- القسم الثاني: النبذة -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Highly motivated Cybersecurity student at Taibah University with an outstanding GPA (4.66/5.00). Passionate about proactive defense, risk assessment, and building secure systems. Experienced in simulating network attacks, finding software vulnerabilities, and developing interactive security labs using Python and Java.</p>
+        </section>
+
+        <!-- القسم الثالث: المشاريع (مدمج فيها السيرة وتقرير اللاب) -->
+        <section id="projects">
+            <h2>Featured Projects & Security Labs</h2>
+            
+            <div class="project">
+                <h3>CyberRun: Interactive Cybersecurity Academy</h3>
+                <p>Developed an integrated learning platform featuring interactive 'War Room' labs for Incident Response training. Built specialized tools for Password Strength Checking and URL Security Scanning.</p>
+                <a href="https://unsadeem2-pixel.github.io/CyberRun/index.html" target="_blank" class="project-link">View Project Live</a>
+            </div>
+
+            <div class="project">
+                <h3>Software Security & Penetration Testing Labs</h3>
+                <p>Conducted extensive hands-on security labs covering web, mobile, and cryptographic vulnerabilities. 
+                <ul>
+                    <li><strong>Web Sec:</strong> Simulated and mitigated SQL Injections, implemented secure Flask & MySQL login systems with MFA (Google Authenticator) and session management.</li>
+                    <li><strong>Cryptography:</strong> Applied Symmetric (Caesar Cipher) and Asymmetric (RSA) encryption manually and programmatically.</li>
+                    <li><strong>Vulnerability Analysis:</strong> Utilized SonarQube to detect and exploit Command Injections and DoS attacks in Java applications.</li>
+                    <li><strong>Mobile Sec:</strong> Simulated Man-in-the-Middle (MitM) attacks, testing secure SHA-256 payload hashing and data-in-transit integrity checks.</li>
+                </ul>
+                </p>
+            </div>
+
+            <div class="project">
+                <h3>DES Cryptography Tool</h3>
+                <p>Built a Java-based implementation of the Data Encryption Standard (DES) algorithm in ECB mode for secure text encryption. Designed a user-friendly GUI for real-time text transformation and Base64 encoding.</p>
+            </div>
+
+            <div class="project">
+                <h3>DDoS Attack Simulation</h3>
+                <p>Created a Java simulation to analyze the impact of HTTP Flood attacks on local servers. Successfully documented network stress behaviors and proposed mitigation strategies including traffic filtering.</p>
+            </div>
+        </section>
+
+        <!-- القسم الرابع: المهارات -->
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <ul class="skills-list">
+                <li>Cyber Defense</li>
+                <li>Risk Management</li>
+                <li>Network Security</li>
+                <li>Python</li>
+                <li>Java</li>
+                <li>SQL / MySQL</li>
+                <li>Flask</li>
+                <li>Linux</li>
+                <li>Wireshark</li>
+                <li>Nmap</li>
+                <li>Metasploit</li>
+                <li>Burp Suite</li>
             </ul>
-        </div>
+        </section>
 
-        <!-- قسم التواصل -->
-        <div class="section">
-            <h2>تواصل معي</h2>
-            <p>
-                📧 الإيميل: <a href="mailto:your-email@example.com">your-email@example.com</a><br>
-                🔗 لينكد إن: <a href="#">رابط حسابك</a><br>
-                🐙 قيت هب: <a href="#">رابط قيت هب</a>
-            </p>
-        </div>
+        <!-- القسم الخامس: الخبرات والتعليم -->
+        <section id="experience-education">
+            <h2>Experience & Education</h2>
+            <p><strong>Bachelor in Cybersecurity</strong> — Taibah University (Expected May 2027)</p>
+            <ul>
+                <li>Leader of the Design Department at <em>Cyber She</em>.</li>
+                <li>Course Instructor for Java Programming at <em>Tmyyoz</em>.</li>
+            </ul>
+        </section>
+
+        <!-- القسم السادس: التواصل -->
+        <section id="contact">
+            <h2>Contact & Links</h2>
+            <ul class="contact-info">
+                <li>📧 <strong>Email:</strong> <a href="mailto:lama.aljohani002@gmail.com">lama.aljohani002@gmail.com</a></li>
+                <li>🔗 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/lama-aljohani" target="_blank">linkedin.com/in/lama-aljohani</a></li>
+                <li>📱 <strong>Phone:</strong> 0564843498</li>
+            </ul>
+        </section>
+
     </div>
+
+    <footer>
+        <p>&copy; 2024 Lama Aljohani. All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>

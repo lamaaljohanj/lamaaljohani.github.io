@@ -1,1938 +1,1512 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
 <title>Lama Aljohani | Cybersecurity Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-
 <style>
+:root{
+    --bg-dark:#090b16;
+    --bg-mid:#11152a;
+    --purple:#8b6cff;
+    --purple-soft:#b8a7ff;
+    --text:#f4f2ff;
+    --muted:#a9a5bd;
+    --line:rgba(255,255,255,.09);
+}
 
-    :root {
-        --text-main: #ffffff;
-        --text-muted: rgba(255, 255, 255, 0.7);
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        --glass-bg: rgba(12, 8, 24, 0.55);
-        --glass-border: rgba(255, 255, 255, 0.15);
+html{
+    scroll-behavior:smooth;
+}
 
-        --bg-dark: #05030a;
+body{
+    background:var(--bg-dark);
+    color:var(--text);
+    font-family:Inter,Arial,sans-serif;
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+
+/* ================= NAVIGATION ================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:100;
+    display:flex;
+    justify-content:center;
+    padding:22px 20px;
+}
+
+.nav-links{
+    display:flex;
+    gap:8px;
+    padding:7px;
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:100px;
+    background:rgba(9,11,22,.55);
+    backdrop-filter:blur(14px);
+}
+
+.nav-links a{
+    padding:9px 17px;
+    border-radius:100px;
+    color:#c4bfd5;
+    font-size:.75rem;
+    transition:.3s ease;
+}
+
+.nav-links a:hover{
+    color:white;
+    background:rgba(139,108,255,.2);
+}
+
+
+/* ================= HERO ================= */
+
+.parallax-top{
+    min-height:72vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    position:relative;
+
+    background-image:
+        linear-gradient(
+            rgba(7,8,18,.28),
+            rgba(7,8,18,.55)
+        ),
+        url("https://i.pinimg.com/1200x/46/0d/46/460d4645de83579c031c41332f4acad2.jpg");
+
+    background-size:cover;
+    background-position:center center;
+    background-attachment:fixed;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    padding:40px 20px;
+}
+
+.eyebrow{
+    color:var(--purple-soft);
+    font-size:.85rem;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:18px;
+}
+
+h1{
+    font-size:clamp(3.5rem,9vw,7rem);
+    line-height:.9;
+    letter-spacing:-5px;
+    font-weight:800;
+}
+
+.hero-subtitle{
+    margin-top:25px;
+    font-size:1.05rem;
+    color:#ddd9ed;
+    letter-spacing:1px;
+}
+
+.hero-meta{
+    margin-top:25px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:14px;
+    flex-wrap:wrap;
+
+    color:#d2cee1;
+    font-size:.9rem;
+}
+
+.hero-meta span{
+    padding:0;
+    border:0;
+    background:none;
+    border-radius:0;
+    backdrop-filter:none;
+}
+
+.hero-meta span:not(:last-child)::after{
+    content:"•";
+    margin-left:14px;
+    color:var(--purple-soft);
+}
+
+.scroll-note{
+    margin-top:55px;
+
+    font-size:.7rem;
+    letter-spacing:3px;
+
+    color:#aaa5ba;
+}
+
+
+/* ================= GENERAL ================= */
+
+section{
+    position:relative;
+    padding:110px 8%;
+}
+
+.section-label{
+    color:var(--purple-soft);
+
+    text-transform:uppercase;
+    letter-spacing:3px;
+
+    font-size:.7rem;
+
+    margin-bottom:18px;
+}
+
+.section-title{
+    font-size:clamp(2rem,5vw,4rem);
+    letter-spacing:-2px;
+
+    margin-bottom:35px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about{
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(139,108,255,.12),
+            transparent 35%
+        ),
+        var(--bg-dark);
+}
+
+.about-grid{
+    display:grid;
+
+    grid-template-columns:1.2fr .8fr;
+
+    gap:80px;
+
+    align-items:center;
+}
+
+.about-text{
+    color:var(--muted);
+
+    font-size:1.08rem;
+    line-height:1.9;
+}
+
+.about-text strong{
+    color:var(--text);
+}
+
+.stat{
+    border-left:1px solid var(--purple);
+
+    padding-left:25px;
+
+    margin-bottom:35px;
+}
+
+.stat-number{
+    font-size:2.5rem;
+    font-weight:700;
+}
+
+.stat-label{
+    color:var(--muted);
+    font-size:.85rem;
+}
+
+
+/* ================= PROJECTS ================= */
+
+.projects{
+    background:var(--bg-mid);
+}
+
+.featured-project{
+    display:grid;
+
+    grid-template-columns:1.1fr .9fr;
+
+    gap:50px;
+
+    align-items:center;
+
+    margin-bottom:70px;
+}
+
+.project-image{
+    min-height:400px;
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(139,108,255,.2),
+            rgba(0,0,0,.15)
+        ),
+        url("project_cyberrun.png") center/cover;
+
+    border:1px solid var(--line);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.35);
+}
+
+.featured-info h3{
+    font-size:2.5rem;
+
+    margin-bottom:18px;
+}
+
+.featured-info p{
+    color:var(--muted);
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+}
+
+.project-link{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:var(--purple-soft);
+
+    font-weight:600;
+}
+
+.project-list{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:0;
+}
+
+.project-row{
+    display:grid;
+
+    grid-template-columns:70px 1fr auto;
+
+    gap:30px;
+
+    align-items:center;
+
+    padding:30px 0;
+
+    border-top:1px solid var(--line);
+
+    transition:.3s ease;
+}
+
+.project-row:last-child{
+    border-bottom:1px solid var(--line);
+}
+
+.project-row:hover{
+    padding-left:15px;
+}
+
+.project-number{
+    color:var(--purple-soft);
+
+    font-size:.8rem;
+}
+
+.project-row h4{
+    font-size:1.2rem;
+
+    margin-bottom:7px;
+}
+
+.project-row p{
+    color:var(--muted);
+
+    font-size:.9rem;
+}
+
+.project-type{
+    color:#77738b;
+
+    font-size:.75rem;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+}
+
+
+/* ================= SKILLS ================= */
+
+.skills{
+    background:
+        radial-gradient(
+            circle at 15% 30%,
+            rgba(139,108,255,.1),
+            transparent 30%
+        ),
+        var(--bg-dark);
+}
+
+.skills-wrap{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    max-width:950px;
+}
+
+.skill{
+    border:1px solid var(--line);
+
+    padding:12px 18px;
+
+    border-radius:100px;
+
+    color:#d6d1e5;
+
+    font-size:.85rem;
+
+    transition:.3s ease;
+}
+
+.skill:hover{
+    border-color:var(--purple);
+
+    color:white;
+
+    transform:translateY(-3px);
+}
+
+
+/* ================= EXPERIENCE ================= */
+
+/*
+   The second image is used as the actual background
+   of the entire Experience section.
+*/
+
+.experience{
+    position:relative;
+
+    background:
+        linear-gradient(
+            rgba(9,11,22,.72),
+            rgba(9,11,22,.86)
+        ),
+        url("https://i.pinimg.com/736x/75/6e/93/756e936e2354d27fb585e835a2b159a5.jpg")
+        center/cover fixed;
+}
+
+.experience::before{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(139,108,255,.16),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(139,108,255,.1),
+            transparent 35%
+        );
+
+    pointer-events:none;
+}
+
+.experience .container{
+    position:relative;
+
+    z-index:1;
+}
+
+.timeline{
+    position:relative;
+
+    max-width:900px;
+}
+
+.timeline-item{
+    position:relative;
+
+    padding:
+        0
+        0
+        55px
+        35px;
+
+    border-left:
+        1px solid
+        rgba(184,167,255,.4);
+}
+
+.timeline-item:last-child{
+    border-left:0;
+}
+
+.timeline-dot{
+    position:absolute;
+
+    left:-5px;
+
+    top:3px;
+
+    width:9px;
+    height:9px;
+
+    border-radius:50%;
+
+    background:var(--purple-soft);
+
+    box-shadow:
+        0 0 20px
+        rgba(184,167,255,.8);
+}
+
+.timeline-date{
+    color:var(--purple-soft);
+
+    font-size:.75rem;
+
+    letter-spacing:2px;
+
+    margin-bottom:10px;
+}
+
+.timeline-item h3{
+    font-size:1.4rem;
+
+    margin-bottom:8px;
+}
+
+.timeline-item p{
+    color:var(--muted);
+
+    line-height:1.7;
+}
+
+
+/* ================= CERTIFICATION ================= */
+
+.certification{
+    background:var(--bg-mid);
+}
+
+.cert-content{
+    display:flex;
+
+    align-items:center;
+
+    gap:50px;
+}
+
+.cert-image{
+    width:170px;
+    height:170px;
+
+    object-fit:cover;
+
+    border-radius:24px;
+
+    border:1px solid var(--line);
+}
+
+.cert-content h3{
+    font-size:1.7rem;
+
+    margin-bottom:10px;
+}
+
+.cert-content p{
+    color:var(--muted);
+
+    line-height:1.7;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact{
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(139,108,255,.16),
+            transparent 45%
+        ),
+        var(--bg-dark);
+}
+
+.contact h2{
+    font-size:clamp(3rem,8vw,6rem);
+
+    letter-spacing:-4px;
+
+    margin-bottom:25px;
+}
+
+.contact p{
+    color:var(--muted);
+
+    margin-bottom:35px;
+}
+
+.contact-buttons{
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:14px;
+
+    flex-wrap:wrap;
+}
+
+.contact-button{
+    display:inline-block;
+
+    min-width:120px;
+
+    padding:15px 28px;
+
+    border:
+        1px solid
+        var(--purple-soft);
+
+    border-radius:100px;
+
+    color:white;
+
+    transition:.3s ease;
+}
+
+.contact-button:hover{
+    background:var(--purple);
+
+    border-color:var(--purple);
+
+    transform:translateY(-3px);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:30px 8%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    color:#6f6b7c;
+
+    font-size:.75rem;
+
+    border-top:1px solid var(--line);
+
+    background:var(--bg-dark);
+}
+
+
+/* ================= MOTION ================= */
+
+.reveal{
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:800px){
+
+    nav{
+        padding:15px 12px;
     }
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Outfit', sans-serif;
+    .nav-links{
+        max-width:100%;
+
+        overflow-x:auto;
+
+        justify-content:flex-start;
     }
 
-    html {
-        scroll-behavior: smooth;
+    .nav-links a{
+        white-space:nowrap;
+
+        padding:8px 13px;
     }
 
-    body {
-        background-color: var(--bg-dark);
-        color: var(--text-main);
-        overflow-x: hidden;
-        line-height: 1.6;
+    .parallax-top{
+        min-height:75vh;
+
+        background-attachment:scroll;
     }
 
-    a {
-        -webkit-tap-highlight-color: transparent;
+    .about-grid,
+    .featured-project{
+        grid-template-columns:1fr;
+
+        gap:45px;
     }
 
-    /* =====================================================
-       BACKGROUND SECTIONS
-    ===================================================== */
-
-    .parallax-top {
-        background:
-            linear-gradient(
-                to bottom,
-                rgba(5, 3, 10, 0.25) 55%,
-                var(--bg-dark) 100%
-            ),
-            url('https://i.pinimg.com/1200x/46/0d/46/460d4645de83579c031c41332f4acad2.jpg')
-            no-repeat center center;
-
-        background-size: cover;
-        background-attachment: fixed;
-
-        padding-top: 5rem;
-        padding-bottom: 3rem;
+    section{
+        padding:80px 7%;
     }
 
-    .color-gap {
-        background:
-            linear-gradient(
-                180deg,
-                var(--bg-dark) 0%,
-                rgba(30, 15, 45, 0.75) 50%,
-                var(--bg-dark) 100%
-            );
-
-        padding: 4rem 0;
+    .project-image{
+        min-height:300px;
     }
 
-    .parallax-bottom {
-        background:
-            linear-gradient(
-                to top,
-                rgba(5, 3, 10, 0.25) 55%,
-                var(--bg-dark) 100%
-            ),
-            url('https://i.pinimg.com/736x/75/6e/93/756e936e2354d27fb585e835a2b159a5.jpg')
-            no-repeat center center;
+    .project-row{
+        grid-template-columns:35px 1fr;
 
-        background-size: cover;
-        background-attachment: fixed;
-
-        padding: 4rem 0 6rem;
+        gap:15px;
     }
 
-    /* =====================================================
-       CONTAINER
-    ===================================================== */
-
-    .container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 1.2rem;
-        position: relative;
+    .project-type{
+        grid-column:2;
     }
 
-    /* =====================================================
-       SCROLL REVEAL
-    ===================================================== */
+    .cert-content{
+        flex-direction:column;
 
-    .motion-reveal {
-        opacity: 0;
-        transform: translateY(40px) scale(0.98);
-
-        transition:
-            opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-            transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-
-        will-change: opacity, transform;
+        align-items:flex-start;
     }
 
-    .motion-reveal.visible {
-        opacity: 1;
-        transform: translateY(0) scale(1);
+    .experience{
+        background-attachment:scroll;
+
+        background-position:center;
     }
 
-    /* =====================================================
-       GLASS PANEL
-    ===================================================== */
+    footer{
+        flex-direction:column;
 
-    .glass-panel {
-        background: var(--glass-bg);
-
-        backdrop-filter: blur(25px) saturate(120%);
-        -webkit-backdrop-filter: blur(25px) saturate(120%);
-
-        border: 1px solid var(--glass-border);
-
-        border-radius: 24px;
-
-        padding: 2rem 1.5rem;
-
-        box-shadow:
-            0 20px 50px rgba(0, 0, 0, 0.4),
-            inset 0 1px 0 rgba(255, 255, 255, 0.1);
-
-        transition:
-            transform 0.4s ease,
-            border-color 0.4s ease;
-
-        margin-bottom: 2.5rem;
-
-        width: 100%;
+        gap:10px;
     }
-
-    /* =====================================================
-       HEADER
-    ===================================================== */
-
-    header {
-        text-align: center;
-        margin-bottom: 4rem;
-    }
-
-    h1 {
-        font-size: 2.8rem;
-        font-weight: 500;
-
-        letter-spacing: -1px;
-
-        margin-bottom: 0.5rem;
-
-        background:
-            linear-gradient(
-                135deg,
-                #fff 0%,
-                rgba(255,255,255,0.7) 100%
-            );
-
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
-    .subtitle {
-        font-size: 1rem;
-
-        color: #d1d5db;
-
-        font-weight: 300;
-
-        letter-spacing: 1.5px;
-
-        margin-bottom: 2rem;
-
-        text-transform: uppercase;
-    }
-
-    .header-links {
-        display: flex;
-
-        justify-content: center;
-
-        align-items: center;
-
-        flex-wrap: wrap;
-
-        gap: 0.7rem;
-    }
-
-    /* =====================================================
-       BUTTONS
-    ===================================================== */
-
-    .btn-seamless {
-        display: inline-flex;
-
-        align-items: center;
-
-        justify-content: center;
-
-        background:
-            rgba(255, 255, 255, 0.08);
-
-        color: #ffffff;
-
-        border:
-            1px solid rgba(255,255,255,0.2);
-
-        padding:
-            0.7rem 1.8rem;
-
-        border-radius: 50px;
-
-        font-size: 0.9rem;
-
-        font-weight: 300;
-
-        text-decoration: none;
-
-        backdrop-filter: blur(10px);
-
-        transition:
-            all 0.3s ease;
-
-        cursor: pointer;
-    }
-
-    .btn-seamless:hover {
-        background:
-            rgba(255, 255, 255, 0.2);
-
-        transform:
-            translateY(-2px);
-    }
-
-    /* =====================================================
-       HEADINGS
-    ===================================================== */
-
-    h2 {
-        font-size: 1.5rem;
-
-        font-weight: 400;
-
-        margin-bottom: 1.5rem;
-
-        color: #ffffff;
-    }
-
-    /* =====================================================
-       PROFILE
-    ===================================================== */
-
-    .summary-box {
-        font-size: 0.98rem;
-
-        color: var(--text-muted);
-
-        font-weight: 300;
-
-        line-height: 1.8;
-
-        margin-bottom: 1.5rem;
-    }
-
-    .education-grid {
-        display: grid;
-
-        grid-template-columns: 1fr;
-
-        gap: 1.2rem;
-    }
-
-    .edu-item {
-        background:
-            rgba(255, 255, 255, 0.02);
-
-        border:
-            1px solid var(--glass-border);
-
-        padding:
-            1.2rem;
-
-        border-radius:
-            16px;
-    }
-
-    .edu-item h4 {
-        font-size: 1rem;
-
-        font-weight: 400;
-
-        color: #fff;
-
-        margin-bottom: 0.3rem;
-    }
-
-    .edu-item p {
-        font-size: 0.85rem;
-
-        color: var(--text-muted);
-    }
-
-    /* =====================================================
-       CERTIFICATION
-    ===================================================== */
-
-    .cert-layout {
-        display: grid;
-
-        grid-template-columns: 1fr;
-
-        gap: 1.8rem;
-
-        align-items: center;
-    }
-
-    .cert-img {
-        width: 100%;
-
-        max-width: 320px;
-
-        margin: 0 auto;
-
-        display: block;
-
-        border-radius: 16px;
-
-        border:
-            1px solid var(--glass-border);
-    }
-
-    .cert-details h3 {
-        font-size: 1.35rem;
-
-        font-weight: 400;
-
-        margin-bottom: 0.8rem;
-    }
-
-    .cert-details p {
-        color: var(--text-muted);
-
-        font-size: 0.95rem;
-
-        margin-bottom: 1.2rem;
-    }
-
-    .cert-meta {
-        font-size: 0.8rem;
-
-        color:
-            rgba(255,255,255,0.5);
-
-        margin-bottom: 1.5rem;
-    }
-
-    /* =====================================================
-       PROJECT SECTION
-    ===================================================== */
-
-    .projects-intro {
-        font-size: 0.92rem;
-
-        color: var(--text-muted);
-
-        margin-bottom: 1.2rem;
-    }
-
-    .scroll-hint {
-        text-align: right;
-
-        font-size: 0.8rem;
-
-        color:
-            rgba(255,255,255,0.4);
-
-        margin-bottom: 0.8rem;
-    }
-
-    .motion-gallery {
-        display: flex;
-
-        gap: 1.2rem;
-
-        overflow-x: auto;
-
-        padding:
-            0.5rem
-            0.2rem
-            1.5rem;
-
-        scroll-snap-type: x mandatory;
-
-        -webkit-overflow-scrolling: touch;
-
-        scrollbar-width: none;
-    }
-
-    .motion-gallery::-webkit-scrollbar {
-        display: none;
-    }
-
-    /* =====================================================
-       PROJECT CARD
-    ===================================================== */
-
-    .motion-card {
-        width: 82vw;
-
-        max-width: 340px;
-
-        flex-shrink: 0;
-
-        scroll-snap-align: center;
-
-        background:
-            rgba(255, 255, 255, 0.03);
-
-        border:
-            1px solid var(--glass-border);
-
-        border-radius: 20px;
-
-        overflow: hidden;
-
-        display: flex;
-
-        flex-direction: column;
-
-        position: relative;
-
-        transition:
-            transform 0.3s ease,
-            border-color 0.3s ease;
-    }
-
-    .motion-card:hover {
-        transform:
-            translateY(-5px);
-
-        border-color:
-            rgba(255,255,255,0.3);
-    }
-
-    /* =====================================================
-       PROJECT PREVIEW
-    ===================================================== */
-
-    .card-preview {
-        width: 100%;
-
-        height: 185px;
-
-        border-bottom:
-            1px solid var(--glass-border);
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: center;
-
-        overflow: hidden;
-
-        background:
-            rgba(0,0,0,0.35);
-
-        position: relative;
-    }
-
-    .card-preview img {
-        width: 100%;
-
-        height: 100%;
-
-        object-fit: cover;
-
-        object-position: center;
-
-        display: block;
-
-        opacity: 0.82;
-    }
-
-    /*
-       PDF previews:
-       The iframe stays inside the card and is slightly
-       zoomed out so the document is easier to recognize.
-    */
-
-    .pdf-preview {
-        background:
-            rgba(0,0,0,0.45);
-    }
-
-    .pdf-preview iframe {
-        position: absolute;
-
-        width: 100%;
-
-        height: 100%;
-
-        left: 0;
-
-        top: 0;
-
-        border: none;
-
-        transform:
-            scale(0.88);
-
-        transform-origin:
-            center center;
-
-        opacity: 0.8;
-
-        pointer-events: none;
-    }
-
-    .preview-overlay {
-        position: absolute;
-
-        inset: 0;
-
-        background:
-            linear-gradient(
-                to bottom,
-                rgba(5,3,10,0.05) 25%,
-                rgba(5,3,10,0.75) 100%
-            );
-
-        pointer-events: none;
-
-        z-index: 1;
-    }
-
-    .badge {
-        position: absolute;
-
-        top: 12px;
-
-        right: 12px;
-
-        background:
-            rgba(255,255,255,0.15);
-
-        backdrop-filter:
-            blur(8px);
-
-        border:
-            1px solid rgba(255,255,255,0.3);
-
-        padding:
-            3px 10px;
-
-        border-radius:
-            20px;
-
-        font-size:
-            0.7rem;
-
-        color:
-            #fff;
-
-        z-index:
-            3;
-    }
-
-    /* =====================================================
-       PROJECT BODY
-    ===================================================== */
-
-    .card-body {
-        padding:
-            1.5rem;
-
-        display:
-            flex;
-
-        flex-direction:
-            column;
-
-        flex-grow:
-            1;
-
-        justify-content:
-            space-between;
-    }
-
-    .card-body h3 {
-        font-size:
-            1.15rem;
-
-        font-weight:
-            400;
-
-        margin-bottom:
-            0.6rem;
-    }
-
-    .card-body p {
-        font-size:
-            0.88rem;
-
-        color:
-            var(--text-muted);
-
-        margin-bottom:
-            1.2rem;
-    }
-
-    .project-button {
-        padding:
-            0.5rem 1.2rem;
-
-        font-size:
-            0.8rem;
-
-        align-self:
-            flex-start;
-    }
-
-    /* =====================================================
-       EXPERIENCE
-    ===================================================== */
-
-    .grid-layout {
-        display:
-            grid;
-
-        grid-template-columns:
-            1fr;
-
-        gap:
-            1.2rem;
-    }
-
-    .info-card {
-        background:
-            rgba(255, 255, 255, 0.02);
-
-        border:
-            1px solid var(--glass-border);
-
-        border-radius:
-            18px;
-
-        padding:
-            1.5rem;
-    }
-
-    .info-card h3 {
-        font-size:
-            1.1rem;
-
-        font-weight:
-            400;
-
-        color:
-            #fff;
-
-        margin-bottom:
-            0.2rem;
-    }
-
-    .info-card .card-subtitle {
-        margin-bottom:
-            1rem;
-
-        color:
-            rgba(255,255,255,0.5);
-
-        font-size:
-            0.85rem;
-
-        letter-spacing:
-            1px;
-
-        text-transform:
-            uppercase;
-    }
-
-    .info-card p {
-        color:
-            var(--text-muted);
-
-        font-size:
-            0.88rem;
-    }
-
-    .info-card .btn-seamless {
-        margin-top:
-            1.2rem;
-
-        padding:
-            0.4rem 1rem;
-
-        font-size:
-            0.78rem;
-    }
-
-    /* =====================================================
-       SKILLS
-    ===================================================== */
-
-    .skills-category {
-        margin-bottom:
-            1.8rem;
-    }
-
-    .skills-category:last-child {
-        margin-bottom:
-            0;
-    }
-
-    .skills-category h3 {
-        font-size:
-            1.05rem;
-
-        font-weight:
-            400;
-
-        margin-bottom:
-            0.8rem;
-
-        color:
-            #fff;
-    }
-
-    .skills-flex {
-        display:
-            flex;
-
-        flex-wrap:
-            wrap;
-
-        gap:
-            0.6rem;
-    }
-
-    .skill-pill {
-        background:
-            rgba(255, 255, 255, 0.04);
-
-        border:
-            1px solid var(--glass-border);
-
-        color:
-            rgba(255,255,255,0.85);
-
-        padding:
-            0.5rem 1.1rem;
-
-        border-radius:
-            50px;
-
-        font-size:
-            0.85rem;
-
-        font-weight:
-            300;
-    }
-
-    /* =====================================================
-       CONTACT
-    ===================================================== */
-
-    .contact-section {
-        text-align:
-            center;
-
-        margin-top:
-            1rem;
-    }
-
-    .contact-section p {
-        color:
-            var(--text-muted);
-
-        font-size:
-            0.92rem;
-
-        margin-bottom:
-            1.5rem;
-    }
-
-    .contact-links {
-        display:
-            flex;
-
-        justify-content:
-            center;
-
-        align-items:
-            center;
-
-        flex-wrap:
-            wrap;
-
-        gap:
-            0.7rem;
-    }
-
-    /* =====================================================
-       FOOTER
-    ===================================================== */
-
-    footer {
-        text-align:
-            center;
-
-        padding:
-            1.5rem 1rem 2rem;
-
-        color:
-            rgba(255,255,255,0.35);
-
-        font-size:
-            0.75rem;
-
-        background:
-            var(--bg-dark);
-    }
-
-    /* =====================================================
-       TABLET / DESKTOP
-    ===================================================== */
-
-    @media (min-width: 768px) {
-
-        .glass-panel {
-            border-radius:
-                32px;
-
-            padding:
-                3rem;
-
-            margin-bottom:
-                3rem;
-        }
-
-        h1 {
-            font-size:
-                4.5rem;
-        }
-
-        .subtitle {
-            font-size:
-                1.25rem;
-        }
-
-        h2 {
-            font-size:
-                1.8rem;
-
-            margin-bottom:
-                2rem;
-        }
-
-        .education-grid {
-            grid-template-columns:
-                1fr 1fr;
-        }
-
-        .cert-layout {
-            grid-template-columns:
-                1fr 1.5fr;
-
-            gap:
-                3rem;
-        }
-
-        /*
-           Desktop:
-           Projects become a clean 2x2 grid.
-        */
-
-        .motion-gallery {
-            display:
-                grid;
-
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
-
-            gap:
-                1.5rem;
-
-            overflow:
-                visible;
-
-            padding:
-                0.5rem 0 0.5rem;
-        }
-
-        .motion-card {
-            width:
-                100%;
-
-            max-width:
-                none;
-
-            scroll-snap-align:
-                none;
-        }
-
-        .scroll-hint {
-            display:
-                none;
-        }
-
-        .grid-layout {
-            grid-template-columns:
-                repeat(2, minmax(0, 1fr));
-
-            gap:
-                2rem;
-        }
-
-    }
-
-    /* =====================================================
-       MOBILE
-    ===================================================== */
-
-    @media (max-width: 767px) {
-
-        /*
-           Mobile browsers do not handle fixed parallax
-           backgrounds consistently.
-
-           We switch to scroll and use contain-like sizing
-           so the artwork is not aggressively cropped.
-        */
-
-        .parallax-top,
-        .parallax-bottom {
-            background-attachment:
-                scroll;
-
-            background-size:
-                100% auto;
-
-            background-position:
-                center top;
-
-            background-repeat:
-                no-repeat;
-        }
-
-        .parallax-top {
-            padding-top:
-                4rem;
-
-            padding-bottom:
-                2rem;
-        }
-
-        .parallax-bottom {
-            background-position:
-                center center;
-
-            padding-top:
-                3rem;
-
-            padding-bottom:
-                4rem;
-        }
-
-        .container {
-            padding:
-                0 1rem;
-        }
-
-        .glass-panel {
-            padding:
-                1.6rem 1.1rem;
-
-            border-radius:
-                22px;
-        }
-
-        header {
-            margin-bottom:
-                3rem;
-        }
-
-        h1 {
-            font-size:
-                clamp(2.4rem, 11vw, 3.2rem);
-        }
-
-        .subtitle {
-            font-size:
-                0.85rem;
-
-            letter-spacing:
-                1.2px;
-        }
-
-        .header-links .btn-seamless {
-            padding:
-                0.6rem 1.25rem;
-
-            font-size:
-                0.82rem;
-        }
-
-        .card-preview {
-            height:
-                175px;
-        }
-
-        .pdf-preview iframe {
-            transform:
-                scale(0.82);
-        }
-
-        .color-gap {
-            padding:
-                2.5rem 0;
-        }
-
-    }
-
-    /* =====================================================
-       ACCESSIBILITY
-    ===================================================== */
-
-    @media (prefers-reduced-motion: reduce) {
-
-        html {
-            scroll-behavior:
-                auto;
-        }
-
-        .motion-reveal {
-            opacity:
-                1;
-
-            transform:
-                none;
-
-            transition:
-                none;
-        }
-
-        .motion-card:hover,
-        .btn-seamless:hover {
-            transform:
-                none;
-        }
-
-    }
-
+}
 </style>
-```
-
 </head>
+
 
 <body>
 
-```
-<!-- =====================================================
-     TOP PARALLAX
-===================================================== -->
 
-<div class="parallax-top">
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+    <div class="nav-links">
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="#projects">
+            Projects
+        </a>
+
+        <a href="#skills">
+            Skills
+        </a>
+
+        <a href="#experience">
+            Experience
+        </a>
+
+        <a href="#certification">
+            Certification
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+        <a
+            href="https://www.linkedin.com/in/lama-aljohani-7b3707290/"
+            target="_blank"
+        >
+            LinkedIn
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<header class="parallax-top">
+
+    <div class="hero-content reveal">
+
+        <div class="eyebrow">
+            Cybersecurity
+        </div>
+
+        <h1>
+            Lama<br>
+            Aljohani
+        </h1>
+
+        <div class="hero-subtitle">
+            Senior Cybersecurity Student
+        </div>
+
+        <div class="hero-meta">
+
+            <span>
+                GPA 4.5+ / 5.0
+            </span>
+
+            <span>
+                STEP 88
+            </span> 
+            <span>
+                SECURITY+
+            </span>
+
+        </div>
+
+        <div class="scroll-note">
+            SCROLL TO EXPLORE
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section
+    class="about"
+    id="about"
+>
+
+    <div class="container about-grid">
+
+
+        <div class="reveal">
+
+            <div class="section-label">
+                01 / About
+            </div>
+
+            <h2 class="section-title">
+                Building secure systems<br>
+                with purpose.
+            </h2>
+
+            <div class="about-text">
+
+                I’m a
+                <strong>
+                    Cybersecurity student
+                </strong>
+                interested in cyber defense,
+                web security, incident response,
+                and vulnerability analysis.
+
+                <br><br>
+
+                I enjoy turning cybersecurity
+                concepts into practical projects
+                and interactive experiences while
+                continuously developing my technical
+                and problem-solving skills.
+
+            </div>
+
+        </div>
+
+
+        <div class="reveal">
+
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    4.5+
+                </div>
+
+                <div class="stat-label">
+                    GPA / 5.0
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    88
+                </div>
+
+                <div class="stat-label">
+                    STEP Score
+                </div>
+
+            </div>
+
+
+            <div class="stat">
+
+                <div class="stat-number">
+                    Security+
+                </div>
+
+                <div class="stat-label">
+                    CompTIA Certified
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section
+    class="projects"
+    id="projects"
+>
 
     <div class="container">
 
-        <!-- HEADER -->
 
-        <header class="motion-reveal">
+        <div class="reveal">
 
-            <h1>Lama Aljohani</h1>
+            <div class="section-label">
+                02 / Selected Work
+            </div>
 
-            <p class="subtitle">
-                Cybersecurity Senior
-            </p>
+            <h2 class="section-title">
+                Projects
+            </h2>
 
-            <div class="header-links">
+        </div>
+
+
+        <!-- FEATURED PROJECT -->
+
+        <div class="featured-project reveal">
+
+
+            <div class="project-image">
+            </div>
+
+
+            <div class="featured-info">
+
+
+                <h3>
+                    CyberRun Academy
+                </h3>
+
+
+                <p>
+                    An interactive cybersecurity
+                    learning platform featuring
+                    hands-on War Room labs focused
+                    on Incident Response, alongside
+                    tools for password strength
+                    checking and URL security scanning.
+                </p>
+
 
                 <a
-                    href="LamaAljohani_CV.pdf"
+                    class="project-link"
+                    href="https://unsadeem2-pixel.github.io/CyberRun/index.html"
                     target="_blank"
-                    class="btn-seamless"
                 >
-                    Download Resume
+                    View Live Project →
                 </a>
-
-                <a
-                    href="https://www.linkedin.com/in/lama-aljohani-7b3707290/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn-seamless"
-                >
-                    LinkedIn
-                </a>
-
-                <!-- Replace this URL with your GitHub profile if needed -->
 
 
             </div>
 
-        </header>
+
+        </div>
 
 
-        <!-- =================================================
-             PROFILE & EDUCATION
-        ================================================== -->
+        <!-- OTHER PROJECTS -->
 
-        <section class="glass-panel motion-reveal">
-
-            <h2>
-                Profile & Education
-            </h2>
-
-            <p class="summary-box">
-
-                Cybersecurity student at Taibah University with
-                hands-on experience in defensive security,
-                secure application development, incident response,
-                and vulnerability analysis. CompTIA Security+
-                certified, with practical experience developing
-                cybersecurity tools, conducting security labs,
-                and participating in CTF competitions.
-
-            </p>
+        <div class="project-list reveal">
 
 
-            <div class="education-grid">
+            <div class="project-row">
 
-                <div class="edu-item">
 
-                    <h4>
-                        Taibah University
-                    </h4>
-
-                    <p>
-                        Bachelor in Cybersecurity<br>
-                        GPA: +4.5 / 5.0
-                    </p>
-
+                <div class="project-number">
+                    02
                 </div>
 
-
-                <div class="edu-item">
-
-                    <h4>
-                        Languages
-                    </h4>
-
-                    <p>
-                        Arabic (Native)<br>
-                        English (Upper-Intermediate — STEP Score: 88)
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             CERTIFICATION
-        ================================================== -->
-
-        <section class="glass-panel motion-reveal">
-
-            <h2>
-                Professional Certification
-            </h2>
-
-
-            <div class="cert-layout">
 
                 <div>
 
-                    <img
-                        src="security_plus.jpg"
-                        alt="CompTIA Security+ certification"
-                        class="cert-img"
-                    >
-
-                </div>
-
-
-                <div class="cert-details">
-
-                    <h3>
-                        CompTIA Security+ (SY0-701)
-                    </h3>
+                    <h4>
+                        DES Cryptography
+                    </h4>
 
                     <p>
-
-                        Certified cybersecurity professional with
-                        foundational expertise in network security,
-                        risk management, threat mitigation,
-                        and enterprise defense.
-
+                        Research and implementation
+                        of the DES encryption algorithm
+                        in Java.
                     </p>
 
-                    <div class="cert-meta">
-
-                        CompTIA Security+<br>
-                        Certification: SY0-701
-
-                    </div>
-
-
-                    <a
-                        href="https://verify.comptia.org/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn-seamless"
-                    >
-                        Verify Credential
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =================================================
-             PROJECTS
-        ================================================== -->
-
-        <section class="glass-panel motion-reveal">
-
-            <h2>
-                Projects & Security Research
-            </h2>
-
-            <p class="projects-intro">
-
-                Selected cybersecurity projects, implementations,
-                and academic security research.
-
-            </p>
-
-            <p class="scroll-hint">
-                Swipe to explore →
-            </p>
-
-
-            <div class="motion-gallery">
-
-
-                <!-- =================================================
-                     PROJECT 1 — CYBERRUN
-                ================================================== -->
-
-                <div class="motion-card">
-
-                    <div class="card-preview">
-
-                        <span class="badge">
-                            Live Platform
-                        </span>
-
-                        <img
-                            src="project_cyberrun.png"
-                            alt="CyberRun Academy project preview"
-                        >
-
-                        <div class="preview-overlay"></div>
-
-                    </div>
-
-
-                    <div class="card-body">
-
-                        <div>
-
-                            <h3>
-                                CyberRun Academy
-                            </h3>
-
-                            <p>
-
-                                Interactive cybersecurity learning
-                                platform featuring immersive
-                                "War Room" labs for Incident
-                                Response training.
-
-                            </p>
-
-                        </div>
-
-
-                        <a
-                            href="https://unsadeem2-pixel.github.io/CyberRun/index.html"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="btn-seamless project-button"
-                        >
-                            Preview Live
-                        </a>
-
-                    </div>
-
                 </div>
 
 
-                <!-- =================================================
-                     PROJECT 2 — DES
-                ================================================== -->
-
-                <div class="motion-card">
-
-                    <div class="card-preview pdf-preview">
-
-                        <span class="badge">
-                            Research Paper
-                        </span>
-
-                        <iframe
-                            src="DES Algorithm Project Report.pdf#page=1&toolbar=0&navpanes=0&scrollbar=0"
-                            title="DES Cryptography project report preview"
-                            scrolling="no"
-                        ></iframe>
-
-                        <div class="preview-overlay"></div>
-
-                    </div>
-
-
-                    <div class="card-body">
-
-                        <div>
-
-                            <h3>
-                                DES Cryptography
-                            </h3>
-
-                            <p>
-
-                                Comprehensive Java implementation
-                                of the DES algorithm in ECB mode
-                                for secure text encryption.
-
-                            </p>
-
-                        </div>
-
-
-                        <a
-                            href="DES Algorithm Project Report.pdf"
-                            target="_blank"
-                            class="btn-seamless project-button"
-                        >
-                            Read Paper
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- =================================================
-                     PROJECT 3 — WINDOWS SECURITY
-                ================================================== -->
-
-                <div class="motion-card">
-
-                    <div class="card-preview pdf-preview">
-
-                        <span class="badge">
-                            Analysis
-                        </span>
-
-                        <iframe
-                            src="OsProject 1.pdf#page=1&toolbar=0&navpanes=0&scrollbar=0"
-                            title="Windows OS Security project report preview"
-                            scrolling="no"
-                        ></iframe>
-
-                        <div class="preview-overlay"></div>
-
-                    </div>
-
-
-                    <div class="card-body">
-
-                        <div>
-
-                            <h3>
-                                Windows OS Security
-                            </h3>
-
-                            <p>
-
-                                Comparative analysis evaluating
-                                the security evolution from
-                                Windows 1.0 through Windows 11.
-
-                            </p>
-
-                        </div>
-
-
-                        <a
-                            href="OsProject 1.pdf"
-                            target="_blank"
-                            class="btn-seamless project-button"
-                        >
-                            Read Paper
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- =================================================
-                     PROJECT 4 — SOFTWARE SECURITY LABS
-                ================================================== -->
-
-                <div class="motion-card">
-
-                    <div class="card-preview pdf-preview">
-
-                        <span class="badge">
-                            Lab Report
-                        </span>
-
-                        <iframe
-                            src="LabReport.pdf#page=1&toolbar=0&navpanes=0&scrollbar=0"
-                            title="Software Security Labs report preview"
-                            scrolling="no"
-                        ></iframe>
-
-                        <div class="preview-overlay"></div>
-
-                    </div>
-
-
-                    <div class="card-body">
-
-                        <div>
-
-                            <h3>
-                                Software Security Labs
-                            </h3>
-
-                            <p>
-
-                                A collection of software security
-                                labs covering SQL injection
-                                mitigation, secure authentication,
-                                MFA, SHA-256 integrity checks,
-                                and secure coding practices.
-
-                            </p>
-
-                        </div>
-
-
-                        <a
-                            href="LabReport.pdf"
-                            target="_blank"
-                            class="btn-seamless project-button"
-                        >
-                            Read Report
-                        </a>
-
-                    </div>
-
+                <div class="project-type">
+                    Research Paper
                 </div>
 
 
             </div>
 
-        </section>
+
+            <div class="project-row">
+
+
+                <div class="project-number">
+                    03
+                </div>
+
+
+                <div>
+
+                    <h4>
+                        Windows OS Security
+                    </h4>
+
+                    <p>
+                        Security analysis covering
+                        Windows operating system
+                        concepts and security mechanisms.
+                    </p>
+
+                </div>
+
+
+                <div class="project-type">
+                    Analysis
+                </div>
+
+
+            </div>
+
+
+            <div class="project-row">
+
+
+                <div class="project-number">
+                    04
+                </div>
+
+
+                <div>
+
+                    <h4>
+                        Software Security Labs
+                    </h4>
+
+                    <p>
+                        Practical security labs covering
+                        vulnerabilities, secure authentication,
+                        SQL injection, and defensive programming.
+                    </p>
+
+                </div>
+
+
+                <div class="project-type">
+                    Lab Report
+                </div>
+
+
+            </div>
+
+
+        </div>
 
     </div>
 
-</div>
+</section>
 
 
-<!-- =========================================================
-     MIDDLE SECTION
-========================================================== -->
+<!-- ================= SKILLS ================= -->
 
-<div class="color-gap">
+<section
+    class="skills"
+    id="skills"
+>
+
+    <div class="container reveal">
+
+
+        <div class="section-label">
+            03 / Technical
+        </div>
+
+
+        <h2 class="section-title">
+            Skills
+        </h2>
+
+
+        <div class="skills-wrap">
+
+
+            <span class="skill">
+                Cyber Defense
+            </span>
+
+            <span class="skill">
+                Risk Management
+            </span>
+
+            <span class="skill">
+                Network Security
+            </span>
+
+            <span class="skill">
+                Incident Response
+            </span>
+
+            <span class="skill">
+                Web Security
+            </span>
+
+            <span class="skill">
+                Vulnerability Analysis
+            </span>
+
+
+            <span class="skill">
+                Python
+            </span>
+
+            <span class="skill">
+                Java
+            </span>
+
+            <span class="skill">
+                SQL
+            </span>
+
+            <span class="skill">
+                Flask
+            </span>
+
+            <span class="skill">
+                HTML / CSS / JS
+            </span>
+
+
+            <span class="skill">
+                Wireshark
+            </span>
+
+            <span class="skill">
+                Nmap
+            </span>
+
+            <span class="skill">
+                Burp Suite
+            </span>
+
+            <span class="skill">
+                Linux
+            </span>
+
+
+            <span class="skill">
+                Leadership
+            </span>
+
+            <span class="skill">
+                Mentoring
+            </span>
+
+            <span class="skill">
+                Strategic Thinking
+            </span>
+
+            <span class="skill">
+                Presentation
+            </span>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section
+    class="experience"
+    id="experience"
+>
 
     <div class="container">
 
 
-        <!-- =================================================
-             LEADERSHIP & EXPERIENCE
-        ================================================== -->
+        <div class="reveal">
 
-        <section class="glass-panel motion-reveal">
+            <div class="section-label">
+                04 / Experience
+            </div>
 
-            <h2>
-                Leadership & Experience
+            <h2 class="section-title">
+                Experience
             </h2>
 
-
-            <div class="grid-layout">
-
-
-                <!-- Cyber She -->
-
-                <div class="info-card">
-
-                    <h3>
-                        Design Dept Leader
-                    </h3>
-
-                    <p class="card-subtitle">
-                        Cyber She Community
-                    </p>
-
-                    <p>
-
-                        Directed the design department throughout
-                        2024, driving visual branding, project
-                        coordination, and community engagement
-                        in cybersecurity.
-
-                    </p>
+        </div>
 
 
-                    <a
-                        href="https://www.linkedin.com/company/cyber-she/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn-seamless"
-                    >
-                        View Community
-                    </a>
+        <div class="timeline">
 
+
+            <div class="timeline-item reveal">
+
+
+                <div class="timeline-dot">
                 </div>
 
 
-                <!-- Java -->
-
-                <div class="info-card">
-
-                    <h3>
-                        Java Programming Instructor
-                    </h3>
-
-                    <p class="card-subtitle">
-                        Tmyyoz Platform
-                    </p>
-
-                    <p>
-
-                        Mentored students through Java 1,
-                        Object-Oriented Programming principles,
-                        and clean code standards while simplifying
-                        algorithmic thinking.
-
-                    </p>
-
+                <div class="timeline-date">
+                    2024
                 </div>
 
 
-                <!-- CTF -->
-
-                <div class="info-card">
-
-                    <h3>
-                        CTF Competitor
-                    </h3>
-
-                    <p class="card-subtitle">
-                        Cyber Arcade — Jeddah University
-                    </p>
-
-                    <p>
-
-                        Active participant in competitive
-                        Capture The Flag events with a focus
-                        on OSINT and Web Exploitation.
-
-                    </p>
-
-                </div>
+                <h3>
+                    Design Department Leader — Cyber She
+                </h3>
 
 
-                <!-- Workshops -->
-
-                <div class="info-card">
-
-                    <h3>
-                        Technical Workshops
-                    </h3>
-
-                    <p class="card-subtitle">
-                        Continuous Learning
-                    </p>
-
-                    <p>
-
-                        Completed intensive cybersecurity
-                        training and technical workshops covering
-                        Linux file systems, cybersecurity
-                        fundamentals, and practical security skills.
-
-                    </p>
-
-                </div>
+                <p>
+                    Directed the design department
+                    throughout 2024, driving visual
+                    branding, project coordination,
+                    and community engagement in
+                    cybersecurity.
+                </p>
 
 
             </div>
 
-        </section>
 
+            <div class="timeline-item reveal">
+
+
+                <div class="timeline-dot">
+                </div>
+
+
+                <div class="timeline-date">
+                    TEACHING
+                </div>
+
+
+                <h3>
+                    Java Programming Instructor
+                </h3>
+
+
+                <p>
+                    Taught Java programming concepts
+                    and helped students strengthen
+                    their programming fundamentals.
+                </p>
+
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+
+                <div class="timeline-dot">
+                </div>
+
+
+                <div class="timeline-date">
+                    CTF
+                </div>
+
+
+                <h3>
+                    Cyber Arcade — Jeddah University
+                </h3>
+
+
+                <p>
+                    Participated in cybersecurity
+                    challenges with a focus on OSINT
+                    and Web Exploitation.
+                </p>
+
+
+            </div>
+
+
+        </div>
 
     </div>
 
-</div>
+</section>
 
 
-<!-- =========================================================
-     BOTTOM SECTION
-========================================================== -->
+<!-- ================= CERTIFICATION ================= -->
 
-<div class="parallax-bottom">
+<section
+    class="certification"
+    id="certification"
+>
 
-    <div class="container">
-
-
-        <!-- =================================================
-             SKILLS
-        ================================================== -->
-
-        <section class="glass-panel motion-reveal">
-
-            <h2>
-                Core Competencies & Skills
-            </h2>
+    <div class="container reveal">
 
 
-            <!-- Cybersecurity -->
+        <div class="section-label">
+            05 / Certification
+        </div>
 
-            <div class="skills-category">
+
+        <div class="cert-content">
+
+
+            <img
+                class="cert-image"
+                src="security_plus.jpg"
+                alt="CompTIA Security+"
+            >
+
+
+            <div>
+
 
                 <h3>
-                    Cybersecurity
+                    CompTIA Security+ — SY0-701
                 </h3>
 
-                <div class="skills-flex">
 
-                    <span class="skill-pill">
-                        Cyber Defense
-                    </span>
+                <p>
+                    Professional cybersecurity
+                    certification covering core
+                    security concepts, threats,
+                    vulnerabilities, architecture,
+                    operations, and incident response.
+                </p>
 
-                    <span class="skill-pill">
-                        Risk Management
-                    </span>
-
-                    <span class="skill-pill">
-                        Network Security
-                    </span>
-
-                    <span class="skill-pill">
-                        Incident Response
-                    </span>
-
-                    <span class="skill-pill">
-                        Web Security
-                    </span>
-
-                    <span class="skill-pill">
-                        Vulnerability Analysis
-                    </span>
-
-                </div>
 
             </div>
 
 
-            <!-- Programming -->
-
-            <div class="skills-category">
-
-                <h3>
-                    Programming & Development
-                </h3>
-
-                <div class="skills-flex">
-
-                    <span class="skill-pill">
-                        Python
-                    </span>
-
-                    <span class="skill-pill">
-                        Java
-                    </span>
-
-                    <span class="skill-pill">
-                        SQL
-                    </span>
-
-                    <span class="skill-pill">
-                        Flask
-                    </span>
-
-                    <span class="skill-pill">
-                        HTML / CSS / JavaScript
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <!-- Tools -->
-
-            <div class="skills-category">
-
-                <h3>
-                    Security Tools
-                </h3>
-
-                <div class="skills-flex">
-
-                    <span class="skill-pill">
-                        Wireshark
-                    </span>
-
-                    <span class="skill-pill">
-                        Nmap
-                    </span>
-
-                    <span class="skill-pill">
-                        Burp Suite
-                    </span>
-
-                    <span class="skill-pill">
-                        Linux
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <!-- Soft Skills -->
-
-            <div class="skills-category">
-
-                <h3>
-                    Soft Skills
-                </h3>
-
-                <div class="skills-flex">
-
-                    <span class="skill-pill">
-                        Leadership
-                    </span>
-
-                    <span class="skill-pill">
-                        Technical Mentoring
-                    </span>
-
-                    <span class="skill-pill">
-                        Strategic Thinking
-                    </span>
-
-                    <span class="skill-pill">
-                        Presentation
-                    </span>
-
-                </div>
-
-            </div>
-
-
-        </section>
-
-
-        <!-- =================================================
-             CONTACT
-        ================================================== -->
-
-        <section class="glass-panel motion-reveal contact-section">
-
-            <h2>
-                Let's Connect
-            </h2>
-
-            <p>
-
-                Interested in cybersecurity, collaboration,
-                internships, or technical opportunities?
-
-            </p>
-
-
-            <div class="contact-links">
-
-                <a
-                    href="https://www.linkedin.com/in/lama-aljohani-7b3707290/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn-seamless"
-                >
-                    LinkedIn
-                </a>
-
-
-    
-
-                <!-- Replace with your professional email -->
-
-                <a
-                    href="mailto:lama.aljohani002@gmail.com"
-                    class="btn-seamless"
-                >
-                    Email
-                </a>
-
-            </div>
-
-        </section>
-
+        </div>
 
     </div>
 
-</div>
+</section>
 
 
-<!-- =========================================================
-     FOOTER
-========================================================== -->
+<!-- ================= CONTACT ================= -->
+
+<section
+    class="contact"
+    id="contact"
+>
+
+    <div class="container reveal">
+
+
+        <div class="section-label">
+            06 / Contact
+        </div>
+
+
+        <h2>
+            Let’s connect.
+        </h2>
+
+
+        <p>
+            Interested in cybersecurity,
+            collaboration, or discussing a project?
+        </p>
+
+
+        <div class="contact-buttons">
+
+
+            <!-- EMAIL -->
+
+            <a
+                class="contact-button"
+                href="mailto:lama.aljohani002@gmail.com"
+            >
+                Email
+            </a>
+
+
+            <!-- LINKEDIN -->
+
+            <a
+                class="contact-button"
+                href="https://www.linkedin.com/in/lama-aljohani-7b3707290/"
+                target="_blank"
+            >
+                LinkedIn
+            </a>
+
+
+            <!-- CV -->
+
+            <a
+                class="contact-button"
+                href="LamaAljohani_CV.pdf"
+                target="_blank"
+            >
+                View CV
+            </a>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
-    © 2026 Lama Aljohani · Cybersecurity Portfolio
+    <span>
+        © 2026 Lama Aljohani
+    </span>
+
+    <span>
+        Cybersecurity Portfolio
+    </span>
 
 </footer>
 
 
-<!-- =========================================================
-     SCROLL OBSERVER
-========================================================== -->
+<!-- ================= JAVASCRIPT ================= -->
 
 <script>
 
-    document.addEventListener(
-        "DOMContentLoaded",
-        function () {
-
-            const observerOptions = {
-                root: null,
-
-                rootMargin: "0px",
-
-                threshold: 0.12
-            };
+const reveals =
+    document.querySelectorAll(".reveal");
 
 
-            const observer =
-                new IntersectionObserver(
-                    (entries, observer) => {
+const observer =
+    new IntersectionObserver(
 
-                        entries.forEach(
-                            (entry) => {
+        entries => {
 
-                                if (
-                                    entry.isIntersecting
-                                ) {
+            entries.forEach(entry => {
 
-                                    entry.target
-                                        .classList
-                                        .add("visible");
+                if(entry.isIntersecting){
 
-                                    observer.unobserve(
-                                        entry.target
-                                    );
+                    entry.target.classList.add(
+                        "visible"
+                    );
 
-                                }
-
-                            }
-                        );
-
-                    },
-                    observerOptions
-                );
-
-
-            const revealElements =
-                document.querySelectorAll(
-                    ".motion-reveal"
-                );
-
-
-            revealElements.forEach(
-                (element) => {
-
-                    observer.observe(
-                        element
+                    observer.unobserve(
+                        entry.target
                     );
 
                 }
-            );
 
+            });
+
+        },
+
+        {
+            threshold:.12
         }
+
     );
 
+
+reveals.forEach(el =>
+    observer.observe(el)
+);
+
 </script>
-```
+
 
 </body>
-
 </html>

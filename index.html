@@ -387,6 +387,22 @@ section{
         var(--bg-dark);
 }
 
+.skill-category{
+    margin-bottom:38px;
+}
+
+.skill-category:last-child{
+    margin-bottom:0;
+}
+
+.skill-category h3{
+    font-size:.75rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--purple-soft);
+    margin-bottom:16px;
+}
+
 .skills-wrap{
     display:flex;
 
@@ -420,12 +436,7 @@ section{
 }
 
 
-/* ================= EXPERIENCE ================= */
-
-/*
-   The second image is used as the actual background
-   of the entire Experience section.
-*/
+/* ================= ACTIVITIES ================= */
 
 .experience{
     position:relative;
@@ -760,29 +771,17 @@ footer{
 
     <div class="nav-links">
 
-        <a href="#about">
-            About
-        </a>
+        <a href="#about">About</a>
 
-        <a href="#projects">
-            Projects
-        </a>
+        <a href="#projects">Projects</a>
 
-        <a href="#skills">
-            Skills
-        </a>
+        <a href="#skills">Skills</a>
 
-        <a href="#experience">
-            Experience
-        </a>
+        <a href="#experience">Activities</a>
 
-        <a href="#certification">
-            Certification
-        </a>
+        <a href="#certification">Certification</a>
 
-        <a href="#contact">
-            Contact
-        </a>
+        <a href="#contact">Contact</a>
 
         <a
             href="https://www.linkedin.com/in/lama-aljohani-7b3707290/"
@@ -823,9 +822,6 @@ footer{
 
             <span>
                 STEP 88
-            </span> 
-            <span>
-                SECURITY+
             </span>
 
         </div>
@@ -1002,8 +998,11 @@ footer{
         <div class="project-list reveal">
 
 
-            <div class="project-row">
-
+            <a
+                class="project-row"
+                href="DES Algorithm Project Report.pdf"
+                target="_blank"
+            >
 
                 <div class="project-number">
                     02
@@ -1026,15 +1025,18 @@ footer{
 
 
                 <div class="project-type">
-                    Research Paper
+                    Research Paper →
                 </div>
 
 
-            </div>
+            </a>
 
 
-            <div class="project-row">
-
+            <a
+                class="project-row"
+                href="OsProject 1.pdf"
+                target="_blank"
+            >
 
                 <div class="project-number">
                     03
@@ -1057,15 +1059,18 @@ footer{
 
 
                 <div class="project-type">
-                    Analysis
+                    Analysis →
                 </div>
 
 
-            </div>
+            </a>
 
 
-            <div class="project-row">
-
+            <a
+                class="project-row"
+                href="LabReport.pdf"
+                target="_blank"
+            >
 
                 <div class="project-number">
                     04
@@ -1088,11 +1093,11 @@ footer{
 
 
                 <div class="project-type">
-                    Lab Report
+                    Lab Report →
                 </div>
 
 
-            </div>
+            </a>
 
 
         </div>
@@ -1122,97 +1127,148 @@ footer{
         </h2>
 
 
-        <div class="skills-wrap">
+        <!-- CYBERSECURITY -->
 
+        <div class="skill-category">
 
-            <span class="skill">
-                Cyber Defense
-            </span>
+            <h3>
+                Cybersecurity
+            </h3>
 
-            <span class="skill">
-                Risk Management
-            </span>
+            <div class="skills-wrap">
 
-            <span class="skill">
-                Network Security
-            </span>
+                <span class="skill">
+                    Cyber Defense
+                </span>
 
-            <span class="skill">
-                Incident Response
-            </span>
+                <span class="skill">
+                    Risk Management
+                </span>
 
-            <span class="skill">
-                Web Security
-            </span>
+                <span class="skill">
+                    Network Security
+                </span>
 
-            <span class="skill">
-                Vulnerability Analysis
-            </span>
+                <span class="skill">
+                    Incident Response
+                </span>
 
+                <span class="skill">
+                    Web Security
+                </span>
 
-            <span class="skill">
-                Python
-            </span>
+                <span class="skill">
+                    Vulnerability Analysis
+                </span>
 
-            <span class="skill">
-                Java
-            </span>
-
-            <span class="skill">
-                SQL
-            </span>
-
-            <span class="skill">
-                Flask
-            </span>
-
-            <span class="skill">
-                HTML / CSS / JS
-            </span>
-
-
-            <span class="skill">
-                Wireshark
-            </span>
-
-            <span class="skill">
-                Nmap
-            </span>
-
-            <span class="skill">
-                Burp Suite
-            </span>
-
-            <span class="skill">
-                Linux
-            </span>
-
-
-            <span class="skill">
-                Leadership
-            </span>
-
-            <span class="skill">
-                Mentoring
-            </span>
-
-            <span class="skill">
-                Strategic Thinking
-            </span>
-
-            <span class="skill">
-                Presentation
-            </span>
-
+            </div>
 
         </div>
+
+
+        <!-- PROGRAMMING -->
+
+        <div class="skill-category">
+
+            <h3>
+                Programming
+            </h3>
+
+            <div class="skills-wrap">
+
+                <span class="skill">
+                    Python
+                </span>
+
+                <span class="skill">
+                    Java
+                </span>
+
+                <span class="skill">
+                    SQL
+                </span>
+
+                <span class="skill">
+                    Flask
+                </span>
+
+                <span class="skill">
+                    HTML / CSS / JS
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- TOOLS -->
+
+        <div class="skill-category">
+
+            <h3>
+                Tools & Technologies
+            </h3>
+
+            <div class="skills-wrap">
+
+                <span class="skill">
+                    Wireshark
+                </span>
+
+                <span class="skill">
+                    Nmap
+                </span>
+
+                <span class="skill">
+                    Burp Suite
+                </span>
+
+                <span class="skill">
+                    Linux
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROFESSIONAL -->
+
+        <div class="skill-category">
+
+            <h3>
+                Professional
+            </h3>
+
+            <div class="skills-wrap">
+
+                <span class="skill">
+                    Leadership
+                </span>
+
+                <span class="skill">
+                    Mentoring
+                </span>
+
+                <span class="skill">
+                    Strategic Thinking
+                </span>
+
+                <span class="skill">
+                    Presentation
+                </span>
+
+            </div>
+
+        </div>
+
 
     </div>
 
 </section>
 
 
-<!-- ================= EXPERIENCE ================= -->
+<!-- ================= ACTIVITIES ================= -->
 
 <section
     class="experience"
@@ -1225,11 +1281,11 @@ footer{
         <div class="reveal">
 
             <div class="section-label">
-                04 / Experience
+                04 / Activities & Involvement
             </div>
 
             <h2 class="section-title">
-                Experience
+                Activities & Involvement
             </h2>
 
         </div>
@@ -1238,85 +1294,124 @@ footer{
         <div class="timeline">
 
 
-            <div class="timeline-item reveal">
+            <!-- CYBER SHE DESIGN -->
 
+            <div class="timeline-item reveal">
 
                 <div class="timeline-dot">
                 </div>
-
-
-                <div class="timeline-date">
-                    2024
-                </div>
-
 
                 <h3>
                     Design Department Leader — Cyber She
                 </h3>
 
-
                 <p>
-                    Directed the design department
-                    throughout 2024, driving visual
-                    branding, project coordination,
-                    and community engagement in
-                    cybersecurity.
+                    Led the design department, participated
+                    in member selection, coordinated with
+                    other department leaders, and designed
+                    and supervised visual projects and
+                    community initiatives.
                 </p>
-
 
             </div>
 
 
-            <div class="timeline-item reveal">
+            <!-- CYBER SHE MEDIA -->
 
+            <div class="timeline-item reveal">
 
                 <div class="timeline-dot">
                 </div>
 
+                <h3>
+                    Media & Marketing Member — Cyber She
+                </h3>
 
-                <div class="timeline-date">
-                    TEACHING
+                <p>
+                    Contributed to the Media & Marketing
+                    Department through content, promotional
+                    activities, and community outreach.
+                </p>
+
+            </div>
+
+
+            <!-- TUWAIQ -->
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot">
                 </div>
 
+                <h3>
+                    Member — Tuwaiq Club, Taibah University
+                </h3>
+
+                <p>
+                    Participating as a member of the university
+                    community and engaging with technical and
+                    student-focused activities.
+                </p>
+
+            </div>
+
+
+            <!-- BOOTCAMP -->
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot">
+                </div>
+
+                <h3>
+                    Cybersecurity Fundamentals Bootcamp
+                </h3>
+
+                <p>
+                    Completed the Cybersecurity Fundamentals
+                    Bootcamp presented by the Saudi Developers
+                    Society, strengthening foundational
+                    cybersecurity knowledge.
+                </p>
+
+            </div>
+
+
+            <!-- JAVA -->
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot">
+                </div>
 
                 <h3>
                     Java Programming Instructor
                 </h3>
 
-
                 <p>
-                    Taught Java programming concepts
-                    and helped students strengthen
-                    their programming fundamentals.
+                    Taught Java programming concepts and helped
+                    students strengthen their programming
+                    fundamentals.
                 </p>
-
 
             </div>
 
 
-            <div class="timeline-item reveal">
+            <!-- CTF -->
 
+            <div class="timeline-item reveal">
 
                 <div class="timeline-dot">
                 </div>
-
-
-                <div class="timeline-date">
-                    CTF
-                </div>
-
 
                 <h3>
                     Cyber Arcade — Jeddah University
                 </h3>
 
-
                 <p>
-                    Participated in cybersecurity
-                    challenges with a focus on OSINT
-                    and Web Exploitation.
+                    Participated in cybersecurity challenges
+                    with a focus on OSINT and Web Exploitation.
                 </p>
-
 
             </div>
 
@@ -1409,8 +1504,6 @@ footer{
         <div class="contact-buttons">
 
 
-            <!-- EMAIL -->
-
             <a
                 class="contact-button"
                 href="mailto:lama.aljohani002@gmail.com"
@@ -1418,8 +1511,6 @@ footer{
                 Email
             </a>
 
-
-            <!-- LINKEDIN -->
 
             <a
                 class="contact-button"
@@ -1429,8 +1520,6 @@ footer{
                 LinkedIn
             </a>
 
-
-            <!-- CV -->
 
             <a
                 class="contact-button"

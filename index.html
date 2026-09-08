@@ -1,580 +1,1938 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lama Aljohani | Cybersecurity Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --text-main: #ffffff;
-            --text-muted: rgba(255, 255, 255, 0.7);
-            --glass-bg: rgba(12, 8, 24, 0.55);
-            --glass-border: rgba(255, 255, 255, 0.15);
-            --glass-highlight: rgba(255, 255, 255, 0.3);
-            --bg-dark: #05030a;
-        }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Outfit', sans-serif;
-        }
+```
+<title>Lama Aljohani | Cybersecurity Portfolio</title>
 
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        /* Parallax Backgrounds */
-        .parallax-top {
-            background: linear-gradient(to bottom, rgba(5,3,10,0.3) 70%, var(--bg-dark) 100%), 
-                        url('https://i.pinimg.com/1200x/46/0d/46/460d4645de83579c031c41332f4acad2.jpg') no-repeat center center;
-            background-size: cover;
-            background-attachment: fixed;
-            padding-top: 5rem;
-            padding-bottom: 3rem;
-        }
+<style>
 
-        .color-gap {
-            background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(30,15,45,0.75) 50%, var(--bg-dark) 100%);
-            padding: 4rem 0;
-        }
+    :root {
+        --text-main: #ffffff;
+        --text-muted: rgba(255, 255, 255, 0.7);
 
-        .parallax-bottom {
-            background: linear-gradient(to top, rgba(5,3,10,0.3) 70%, var(--bg-dark) 100%), 
-                        url('https://i.pinimg.com/736x/75/6e/93/756e936e2354d27fb585e835a2b159a5.jpg') no-repeat center center;
-            background-size: cover;
-            background-attachment: fixed;
-            padding: 4rem 0 6rem;
-        }
+        --glass-bg: rgba(12, 8, 24, 0.55);
+        --glass-border: rgba(255, 255, 255, 0.15);
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 1.2rem;
-            position: relative;
-        }
+        --bg-dark: #05030a;
+    }
 
-        /* Scroll Motion Animation Classes */
-        .motion-reveal {
-            opacity: 0;
-            transform: translateY(40px) scale(0.98);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: opacity, transform;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Outfit', sans-serif;
+    }
 
-        .motion-reveal.visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
+    html {
+        scroll-behavior: smooth;
+    }
 
-        /* Glassmorphism Panel Fixes for Mobile */
+    body {
+        background-color: var(--bg-dark);
+        color: var(--text-main);
+        overflow-x: hidden;
+        line-height: 1.6;
+    }
+
+    a {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* =====================================================
+       BACKGROUND SECTIONS
+    ===================================================== */
+
+    .parallax-top {
+        background:
+            linear-gradient(
+                to bottom,
+                rgba(5, 3, 10, 0.25) 55%,
+                var(--bg-dark) 100%
+            ),
+            url('https://i.pinimg.com/1200x/46/0d/46/460d4645de83579c031c41332f4acad2.jpg')
+            no-repeat center center;
+
+        background-size: cover;
+        background-attachment: fixed;
+
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+    }
+
+    .color-gap {
+        background:
+            linear-gradient(
+                180deg,
+                var(--bg-dark) 0%,
+                rgba(30, 15, 45, 0.75) 50%,
+                var(--bg-dark) 100%
+            );
+
+        padding: 4rem 0;
+    }
+
+    .parallax-bottom {
+        background:
+            linear-gradient(
+                to top,
+                rgba(5, 3, 10, 0.25) 55%,
+                var(--bg-dark) 100%
+            ),
+            url('https://i.pinimg.com/736x/75/6e/93/756e936e2354d27fb585e835a2b159a5.jpg')
+            no-repeat center center;
+
+        background-size: cover;
+        background-attachment: fixed;
+
+        padding: 4rem 0 6rem;
+    }
+
+    /* =====================================================
+       CONTAINER
+    ===================================================== */
+
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1.2rem;
+        position: relative;
+    }
+
+    /* =====================================================
+       SCROLL REVEAL
+    ===================================================== */
+
+    .motion-reveal {
+        opacity: 0;
+        transform: translateY(40px) scale(0.98);
+
+        transition:
+            opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+            transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+        will-change: opacity, transform;
+    }
+
+    .motion-reveal.visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    /* =====================================================
+       GLASS PANEL
+    ===================================================== */
+
+    .glass-panel {
+        background: var(--glass-bg);
+
+        backdrop-filter: blur(25px) saturate(120%);
+        -webkit-backdrop-filter: blur(25px) saturate(120%);
+
+        border: 1px solid var(--glass-border);
+
+        border-radius: 24px;
+
+        padding: 2rem 1.5rem;
+
+        box-shadow:
+            0 20px 50px rgba(0, 0, 0, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+        transition:
+            transform 0.4s ease,
+            border-color 0.4s ease;
+
+        margin-bottom: 2.5rem;
+
+        width: 100%;
+    }
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    h1 {
+        font-size: 2.8rem;
+        font-weight: 500;
+
+        letter-spacing: -1px;
+
+        margin-bottom: 0.5rem;
+
+        background:
+            linear-gradient(
+                135deg,
+                #fff 0%,
+                rgba(255,255,255,0.7) 100%
+            );
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+
+        color: #d1d5db;
+
+        font-weight: 300;
+
+        letter-spacing: 1.5px;
+
+        margin-bottom: 2rem;
+
+        text-transform: uppercase;
+    }
+
+    .header-links {
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        flex-wrap: wrap;
+
+        gap: 0.7rem;
+    }
+
+    /* =====================================================
+       BUTTONS
+    ===================================================== */
+
+    .btn-seamless {
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        background:
+            rgba(255, 255, 255, 0.08);
+
+        color: #ffffff;
+
+        border:
+            1px solid rgba(255,255,255,0.2);
+
+        padding:
+            0.7rem 1.8rem;
+
+        border-radius: 50px;
+
+        font-size: 0.9rem;
+
+        font-weight: 300;
+
+        text-decoration: none;
+
+        backdrop-filter: blur(10px);
+
+        transition:
+            all 0.3s ease;
+
+        cursor: pointer;
+    }
+
+    .btn-seamless:hover {
+        background:
+            rgba(255, 255, 255, 0.2);
+
+        transform:
+            translateY(-2px);
+    }
+
+    /* =====================================================
+       HEADINGS
+    ===================================================== */
+
+    h2 {
+        font-size: 1.5rem;
+
+        font-weight: 400;
+
+        margin-bottom: 1.5rem;
+
+        color: #ffffff;
+    }
+
+    /* =====================================================
+       PROFILE
+    ===================================================== */
+
+    .summary-box {
+        font-size: 0.98rem;
+
+        color: var(--text-muted);
+
+        font-weight: 300;
+
+        line-height: 1.8;
+
+        margin-bottom: 1.5rem;
+    }
+
+    .education-grid {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 1.2rem;
+    }
+
+    .edu-item {
+        background:
+            rgba(255, 255, 255, 0.02);
+
+        border:
+            1px solid var(--glass-border);
+
+        padding:
+            1.2rem;
+
+        border-radius:
+            16px;
+    }
+
+    .edu-item h4 {
+        font-size: 1rem;
+
+        font-weight: 400;
+
+        color: #fff;
+
+        margin-bottom: 0.3rem;
+    }
+
+    .edu-item p {
+        font-size: 0.85rem;
+
+        color: var(--text-muted);
+    }
+
+    /* =====================================================
+       CERTIFICATION
+    ===================================================== */
+
+    .cert-layout {
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 1.8rem;
+
+        align-items: center;
+    }
+
+    .cert-img {
+        width: 100%;
+
+        max-width: 320px;
+
+        margin: 0 auto;
+
+        display: block;
+
+        border-radius: 16px;
+
+        border:
+            1px solid var(--glass-border);
+    }
+
+    .cert-details h3 {
+        font-size: 1.35rem;
+
+        font-weight: 400;
+
+        margin-bottom: 0.8rem;
+    }
+
+    .cert-details p {
+        color: var(--text-muted);
+
+        font-size: 0.95rem;
+
+        margin-bottom: 1.2rem;
+    }
+
+    .cert-meta {
+        font-size: 0.8rem;
+
+        color:
+            rgba(255,255,255,0.5);
+
+        margin-bottom: 1.5rem;
+    }
+
+    /* =====================================================
+       PROJECT SECTION
+    ===================================================== */
+
+    .projects-intro {
+        font-size: 0.92rem;
+
+        color: var(--text-muted);
+
+        margin-bottom: 1.2rem;
+    }
+
+    .scroll-hint {
+        text-align: right;
+
+        font-size: 0.8rem;
+
+        color:
+            rgba(255,255,255,0.4);
+
+        margin-bottom: 0.8rem;
+    }
+
+    .motion-gallery {
+        display: flex;
+
+        gap: 1.2rem;
+
+        overflow-x: auto;
+
+        padding:
+            0.5rem
+            0.2rem
+            1.5rem;
+
+        scroll-snap-type: x mandatory;
+
+        -webkit-overflow-scrolling: touch;
+
+        scrollbar-width: none;
+    }
+
+    .motion-gallery::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* =====================================================
+       PROJECT CARD
+    ===================================================== */
+
+    .motion-card {
+        width: 82vw;
+
+        max-width: 340px;
+
+        flex-shrink: 0;
+
+        scroll-snap-align: center;
+
+        background:
+            rgba(255, 255, 255, 0.03);
+
+        border:
+            1px solid var(--glass-border);
+
+        border-radius: 20px;
+
+        overflow: hidden;
+
+        display: flex;
+
+        flex-direction: column;
+
+        position: relative;
+
+        transition:
+            transform 0.3s ease,
+            border-color 0.3s ease;
+    }
+
+    .motion-card:hover {
+        transform:
+            translateY(-5px);
+
+        border-color:
+            rgba(255,255,255,0.3);
+    }
+
+    /* =====================================================
+       PROJECT PREVIEW
+    ===================================================== */
+
+    .card-preview {
+        width: 100%;
+
+        height: 185px;
+
+        border-bottom:
+            1px solid var(--glass-border);
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        overflow: hidden;
+
+        background:
+            rgba(0,0,0,0.35);
+
+        position: relative;
+    }
+
+    .card-preview img {
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+
+        object-position: center;
+
+        display: block;
+
+        opacity: 0.82;
+    }
+
+    /*
+       PDF previews:
+       The iframe stays inside the card and is slightly
+       zoomed out so the document is easier to recognize.
+    */
+
+    .pdf-preview {
+        background:
+            rgba(0,0,0,0.45);
+    }
+
+    .pdf-preview iframe {
+        position: absolute;
+
+        width: 100%;
+
+        height: 100%;
+
+        left: 0;
+
+        top: 0;
+
+        border: none;
+
+        transform:
+            scale(0.88);
+
+        transform-origin:
+            center center;
+
+        opacity: 0.8;
+
+        pointer-events: none;
+    }
+
+    .preview-overlay {
+        position: absolute;
+
+        inset: 0;
+
+        background:
+            linear-gradient(
+                to bottom,
+                rgba(5,3,10,0.05) 25%,
+                rgba(5,3,10,0.75) 100%
+            );
+
+        pointer-events: none;
+
+        z-index: 1;
+    }
+
+    .badge {
+        position: absolute;
+
+        top: 12px;
+
+        right: 12px;
+
+        background:
+            rgba(255,255,255,0.15);
+
+        backdrop-filter:
+            blur(8px);
+
+        border:
+            1px solid rgba(255,255,255,0.3);
+
+        padding:
+            3px 10px;
+
+        border-radius:
+            20px;
+
+        font-size:
+            0.7rem;
+
+        color:
+            #fff;
+
+        z-index:
+            3;
+    }
+
+    /* =====================================================
+       PROJECT BODY
+    ===================================================== */
+
+    .card-body {
+        padding:
+            1.5rem;
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        flex-grow:
+            1;
+
+        justify-content:
+            space-between;
+    }
+
+    .card-body h3 {
+        font-size:
+            1.15rem;
+
+        font-weight:
+            400;
+
+        margin-bottom:
+            0.6rem;
+    }
+
+    .card-body p {
+        font-size:
+            0.88rem;
+
+        color:
+            var(--text-muted);
+
+        margin-bottom:
+            1.2rem;
+    }
+
+    .project-button {
+        padding:
+            0.5rem 1.2rem;
+
+        font-size:
+            0.8rem;
+
+        align-self:
+            flex-start;
+    }
+
+    /* =====================================================
+       EXPERIENCE
+    ===================================================== */
+
+    .grid-layout {
+        display:
+            grid;
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            1.2rem;
+    }
+
+    .info-card {
+        background:
+            rgba(255, 255, 255, 0.02);
+
+        border:
+            1px solid var(--glass-border);
+
+        border-radius:
+            18px;
+
+        padding:
+            1.5rem;
+    }
+
+    .info-card h3 {
+        font-size:
+            1.1rem;
+
+        font-weight:
+            400;
+
+        color:
+            #fff;
+
+        margin-bottom:
+            0.2rem;
+    }
+
+    .info-card .card-subtitle {
+        margin-bottom:
+            1rem;
+
+        color:
+            rgba(255,255,255,0.5);
+
+        font-size:
+            0.85rem;
+
+        letter-spacing:
+            1px;
+
+        text-transform:
+            uppercase;
+    }
+
+    .info-card p {
+        color:
+            var(--text-muted);
+
+        font-size:
+            0.88rem;
+    }
+
+    .info-card .btn-seamless {
+        margin-top:
+            1.2rem;
+
+        padding:
+            0.4rem 1rem;
+
+        font-size:
+            0.78rem;
+    }
+
+    /* =====================================================
+       SKILLS
+    ===================================================== */
+
+    .skills-category {
+        margin-bottom:
+            1.8rem;
+    }
+
+    .skills-category:last-child {
+        margin-bottom:
+            0;
+    }
+
+    .skills-category h3 {
+        font-size:
+            1.05rem;
+
+        font-weight:
+            400;
+
+        margin-bottom:
+            0.8rem;
+
+        color:
+            #fff;
+    }
+
+    .skills-flex {
+        display:
+            flex;
+
+        flex-wrap:
+            wrap;
+
+        gap:
+            0.6rem;
+    }
+
+    .skill-pill {
+        background:
+            rgba(255, 255, 255, 0.04);
+
+        border:
+            1px solid var(--glass-border);
+
+        color:
+            rgba(255,255,255,0.85);
+
+        padding:
+            0.5rem 1.1rem;
+
+        border-radius:
+            50px;
+
+        font-size:
+            0.85rem;
+
+        font-weight:
+            300;
+    }
+
+    /* =====================================================
+       CONTACT
+    ===================================================== */
+
+    .contact-section {
+        text-align:
+            center;
+
+        margin-top:
+            1rem;
+    }
+
+    .contact-section p {
+        color:
+            var(--text-muted);
+
+        font-size:
+            0.92rem;
+
+        margin-bottom:
+            1.5rem;
+    }
+
+    .contact-links {
+        display:
+            flex;
+
+        justify-content:
+            center;
+
+        align-items:
+            center;
+
+        flex-wrap:
+            wrap;
+
+        gap:
+            0.7rem;
+    }
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+        text-align:
+            center;
+
+        padding:
+            1.5rem 1rem 2rem;
+
+        color:
+            rgba(255,255,255,0.35);
+
+        font-size:
+            0.75rem;
+
+        background:
+            var(--bg-dark);
+    }
+
+    /* =====================================================
+       TABLET / DESKTOP
+    ===================================================== */
+
+    @media (min-width: 768px) {
+
         .glass-panel {
-            background: var(--glass-bg);
-            backdrop-filter: blur(25px) saturate(120%);
-            -webkit-backdrop-filter: blur(25px) saturate(120%);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 2rem 1.5rem;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            transition: all 0.4s ease;
-            margin-bottom: 2.5rem;
-            width: 100%;
-        }
+            border-radius:
+                32px;
 
-        @media(min-width: 768px) {
-            .glass-panel {
-                border-radius: 32px;
-                padding: 3rem;
-                margin-bottom: 3rem;
-            }
-        }
+            padding:
+                3rem;
 
-        header {
-            text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom:
+                3rem;
         }
 
         h1 {
-            font-size: 2.8rem;
-            font-weight: 500;
-            letter-spacing: -1px;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        @media(min-width: 768px) {
-            h1 { font-size: 4.5rem; }
+            font-size:
+                4.5rem;
         }
 
         .subtitle {
-            font-size: 1rem;
-            color: #d1d5db;
-            font-weight: 300;
-            letter-spacing: 1.5px;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-        }
-
-        @media(min-width: 768px) {
-            .subtitle { font-size: 1.25rem; }
+            font-size:
+                1.25rem;
         }
 
         h2 {
-            font-size: 1.5rem;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-            color: #ffffff;
-        }
+            font-size:
+                1.8rem;
 
-        @media(min-width: 768px) {
-            h2 { font-size: 1.8rem; margin-bottom: 2rem; }
-        }
-
-        .btn-seamless {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, 0.08);
-            color: #ffffff;
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 0.7rem 1.8rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 300;
-            text-decoration: none;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .btn-seamless:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .summary-box {
-            font-size: 0.98rem;
-            color: var(--text-muted);
-            font-weight: 300;
-            line-height: 1.7;
-            margin-bottom: 1.5rem;
+            margin-bottom:
+                2rem;
         }
 
         .education-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.2rem;
+            grid-template-columns:
+                1fr 1fr;
         }
 
-        @media(min-width: 768px) {
-            .education-grid { grid-template-columns: 1fr 1fr; }
-        }
-
-        .edu-item {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--glass-border);
-            padding: 1.2rem;
-            border-radius: 16px;
-        }
-
-        .edu-item h4 {
-            font-size: 1rem;
-            font-weight: 400;
-            color: #fff;
-            margin-bottom: 0.3rem;
-        }
-
-        .edu-item p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        /* Cert Layout Mobile Responsive */
         .cert-layout {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.8rem;
-            align-items: center;
+            grid-template-columns:
+                1fr 1.5fr;
+
+            gap:
+                3rem;
         }
 
-        @media(min-width: 768px) {
-            .cert-layout { grid-template-columns: 1fr 1.5fr; gap: 3rem; }
-        }
+        /*
+           Desktop:
+           Projects become a clean 2x2 grid.
+        */
 
-        .cert-img {
-            width: 100%;
-            max-width: 320px;
-            margin: 0 auto;
-            display: block;
-            border-radius: 16px;
-            border: 1px solid var(--glass-border);
-        }
-
-        .cert-details h3 {
-            font-size: 1.35rem;
-            font-weight: 400;
-            margin-bottom: 0.8rem;
-        }
-
-        .cert-details p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .cert-meta {
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.5);
-            margin-bottom: 1.5rem;
-        }
-
-        /* Horizontal Motion Gallery Mobile Fixes */
         .motion-gallery {
-            display: flex;
-            gap: 1.2rem;
-            overflow-x: auto;
-            padding: 0.5rem 0.2rem 1.5rem;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-        }
+            display:
+                grid;
 
-        .motion-gallery::-webkit-scrollbar { display: none; }
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap:
+                1.5rem;
+
+            overflow:
+                visible;
+
+            padding:
+                0.5rem 0 0.5rem;
+        }
 
         .motion-card {
-            width: 82vw;
-            max-width: 340px;
-            flex-shrink: 0;
-            scroll-snap-align: center;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
+            width:
+                100%;
 
-        .card-preview {
-            width: 100%;
-            height: 160px;
-            border-bottom: 1px solid var(--glass-border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background: rgba(0,0,0,0.3);
-            position: relative;
-        }
+            max-width:
+                none;
 
-        .card-preview iframe, .card-preview img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border: none;
-            opacity: 0.75;
-            pointer-events: none;
-        }
-
-        .badge {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(255,255,255,0.3);
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 0.7rem;
-            color: #fff;
-        }
-
-        .card-body {
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            justify-content: space-between;
-        }
-
-        .card-body h3 {
-            font-size: 1.15rem;
-            font-weight: 400;
-            margin-bottom: 0.6rem;
-        }
-
-        .card-body p {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
-
-        .grid-layout {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.2rem;
-        }
-
-        @media(min-width: 768px) {
-            .grid-layout { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-        }
-
-        .info-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--glass-border);
-            border-radius: 18px;
-            padding: 1.5rem;
-        }
-
-        .info-card h3 {
-            font-size: 1.1rem;
-            font-weight: 400;
-            color: #fff;
-        }
-
-        .info-card .card-subtitle {
-            margin-bottom: 1rem;
-            color: rgba(255,255,255,0.5);
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .info-card p {
-            color: var(--text-muted);
-            font-size: 0.88rem;
-        }
-
-        .skills-flex {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-        }
-
-        .skill-pill {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--glass-border);
-            color: rgba(255,255,255,0.85);
-            padding: 0.5rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 300;
+            scroll-snap-align:
+                none;
         }
 
         .scroll-hint {
-            text-align: right;
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.4);
-            margin-bottom: 0.8rem;
+            display:
+                none;
         }
-    </style>
+
+        .grid-layout {
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap:
+                2rem;
+        }
+
+    }
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 767px) {
+
+        /*
+           Mobile browsers do not handle fixed parallax
+           backgrounds consistently.
+
+           We switch to scroll and use contain-like sizing
+           so the artwork is not aggressively cropped.
+        */
+
+        .parallax-top,
+        .parallax-bottom {
+            background-attachment:
+                scroll;
+
+            background-size:
+                100% auto;
+
+            background-position:
+                center top;
+
+            background-repeat:
+                no-repeat;
+        }
+
+        .parallax-top {
+            padding-top:
+                4rem;
+
+            padding-bottom:
+                2rem;
+        }
+
+        .parallax-bottom {
+            background-position:
+                center center;
+
+            padding-top:
+                3rem;
+
+            padding-bottom:
+                4rem;
+        }
+
+        .container {
+            padding:
+                0 1rem;
+        }
+
+        .glass-panel {
+            padding:
+                1.6rem 1.1rem;
+
+            border-radius:
+                22px;
+        }
+
+        header {
+            margin-bottom:
+                3rem;
+        }
+
+        h1 {
+            font-size:
+                clamp(2.4rem, 11vw, 3.2rem);
+        }
+
+        .subtitle {
+            font-size:
+                0.85rem;
+
+            letter-spacing:
+                1.2px;
+        }
+
+        .header-links .btn-seamless {
+            padding:
+                0.6rem 1.25rem;
+
+            font-size:
+                0.82rem;
+        }
+
+        .card-preview {
+            height:
+                175px;
+        }
+
+        .pdf-preview iframe {
+            transform:
+                scale(0.82);
+        }
+
+        .color-gap {
+            padding:
+                2.5rem 0;
+        }
+
+    }
+
+    /* =====================================================
+       ACCESSIBILITY
+    ===================================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+
+        html {
+            scroll-behavior:
+                auto;
+        }
+
+        .motion-reveal {
+            opacity:
+                1;
+
+            transform:
+                none;
+
+            transition:
+                none;
+        }
+
+        .motion-card:hover,
+        .btn-seamless:hover {
+            transform:
+                none;
+        }
+
+    }
+
+</style>
+```
+
 </head>
+
 <body>
 
-    <!-- Top Parallax -->
-    <div class="parallax-top">
-        <div class="container">
-            
-            <header class="motion-reveal">
-                <h1>Lama Aljohani</h1>
-                <p class="subtitle">Cybersecurity Senior</p>
-                <a href="LamaAljohami_CV.pdf" target="_blank" class="btn-seamless">Download Resume</a>
-            </header>
+```
+<!-- =====================================================
+     TOP PARALLAX
+===================================================== -->
 
-            <!-- Objective & Education -->
-            <section class="glass-panel motion-reveal">
-                <h2>Profile & Education</h2>
-                <p class="summary-box">
-                    Highly motivated Cybersecurity student at Taibah University with strong foundations in proactive defense, threat analysis, and secure code architecture.
-                </p>
-                <div class="education-grid">
-                    <div class="edu-item">
-                        <h4>Taibah University</h4>
-                        <p>Bachelor in Cybersecurity<br>GPA: Execellent</p>
-                    </div>
-                    <div class="edu-item">
-                        <h4>Languages</h4>
-                        <p>Arabic (Native)[cite: 1]<br>English (Upper-Intermediate — STEP Score: 88)[cite: 1]</p>
-                    </div>
+<div class="parallax-top">
+
+    <div class="container">
+
+        <!-- HEADER -->
+
+        <header class="motion-reveal">
+
+            <h1>Lama Aljohani</h1>
+
+            <p class="subtitle">
+                Cybersecurity Senior
+            </p>
+
+            <div class="header-links">
+
+                <a
+                    href="LamaAljohani_CV.pdf"
+                    target="_blank"
+                    class="btn-seamless"
+                >
+                    Download Resume
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/lama-aljohani-7b3707290/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-seamless"
+                >
+                    LinkedIn
+                </a>
+
+                <!-- Replace this URL with your GitHub profile if needed -->
+
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             PROFILE & EDUCATION
+        ================================================== -->
+
+        <section class="glass-panel motion-reveal">
+
+            <h2>
+                Profile & Education
+            </h2>
+
+            <p class="summary-box">
+
+                Cybersecurity student at Taibah University with
+                hands-on experience in defensive security,
+                secure application development, incident response,
+                and vulnerability analysis. CompTIA Security+
+                certified, with practical experience developing
+                cybersecurity tools, conducting security labs,
+                and participating in CTF competitions.
+
+            </p>
+
+
+            <div class="education-grid">
+
+                <div class="edu-item">
+
+                    <h4>
+                        Taibah University
+                    </h4>
+
+                    <p>
+                        Bachelor in Cybersecurity<br>
+                        GPA: +4.5 / 5.0
+                    </p>
+
                 </div>
-            </section>
 
-            <!-- Certification -->
-            <section class="glass-panel motion-reveal">
-                <h2>Professional Certification</h2>
-                <div class="cert-layout">
-                    <div>
-                        <img src="security_plus.jpg" alt="CompTIA Security+" class="cert-img">
-                    </div>
-                    <div class="cert-details">
-                        <h3>CompTIA Security+ (SY0-701)</h3>
-                        <p>Certified professional with proven expertise in network architecture, risk management, threat mitigation, and enterprise defense[cite: 1].</p>
-                        <div class="cert-meta">
-                            Candidate ID: COMP001022977471 <br>
-                        
-                        </div>
-                        <a href="http://verify.CompTIA.org" target="_blank" class="btn-seamless">Verify Credential</a>
-                    </div>
+
+                <div class="edu-item">
+
+                    <h4>
+                        Languages
+                    </h4>
+
+                    <p>
+                        Arabic (Native)<br>
+                        English (Upper-Intermediate — STEP Score: 88)
+                    </p>
+
                 </div>
-            </section>
 
-            <!-- Motion Gallery Projects -->
-            <section class="glass-panel motion-reveal">
-                <h2>Projects & Security Research</h2>
-                <p class="scroll-hint">Swipe to explore ➔</p>
-                
-                <div class="motion-gallery">
-                    <div class="motion-card">
-                        <div class="card-preview">
-                            <span class="badge">Live Platform</span>
-                            <img src="project_cyberrun.png" alt="CyberRun">
-                        </div>
-                        <div class="card-body">
-                            <div>
-                                <h3>CyberRun Academy</h3>
-                                <p>Interactive cybersecurity learning platform featuring immersive 'War Room' labs for Incident Response training[cite: 1].</p>
-                            </div>
-                            <a href="https://unsadeem2-pixel.github.io/CyberRun/index.html" target="_blank" class="btn-seamless" style="padding: 0.5rem 1.2rem; font-size: 0.8rem; align-self: flex-start;">Preview Live</a>
-                        </div>
-                    </div>
+            </div>
 
-                    <div class="motion-card">
-                        <div class="card-preview">
-                            <span class="badge">Research Paper</span>
-                            <iframe src="DES Algorithm Project Report.pdf" scrolling="no"></iframe>
-                        </div>
-                        <div class="card-body">
-                            <div>
-                                <h3>DES Cryptography</h3>
-                                <p>Comprehensive Java implementation of the DES algorithm in ECB mode for secure text encryption[cite: 4].</p>
-                            </div>
-                            <a href="DES Algorithm Project Report.pdf" target="_blank" class="btn-seamless" style="padding: 0.5rem 1.2rem; font-size: 0.8rem; align-self: flex-start;">Read Paper</a>
-                        </div>
-                    </div>
+        </section>
 
-                    <div class="motion-card">
-                        <div class="card-preview">
-                            <span class="badge">Analysis</span>
-                            <iframe src="OsProject 1.pdf" scrolling="no"></iframe>
-                        </div>
-                        <div class="card-body">
-                            <div>
-                                <h3>Windows OS Security</h3>
-                                <p>Comparative analysis evaluating the security evolution from Windows 1.0 through Windows 11[cite: 9].</p>
-                            </div>
-                            <a href="OsProject 1.pdf" target="_blank" class="btn-seamless" style="padding: 0.5rem 1.2rem; font-size: 0.8rem; align-self: flex-start;">Read Paper</a>
-                        </div>
-                    </div>
 
-                    <div class="motion-card">
-                        <div class="card-preview">
-                            <span class="badge">Lab Report</span>
-                            <iframe src="LabReport.pdf" scrolling="no"></iframe>
-                        </div>
-                        <div class="card-body">
-                            <div>
-                                <h3>Software Security Labs</h3>
-                                <p>Web & Mobile security testing covering SQLi mitigation, MFA, and SHA-256 integrity checks[cite: 2].</p>
-                            </div>
-                            <a href="LabReport.pdf" target="_blank" class="btn-seamless" style="padding: 0.5rem 1.2rem; font-size: 0.8rem; align-self: flex-start;">Read Report</a>
-                        </div>
-                    </div>
+        <!-- =================================================
+             CERTIFICATION
+        ================================================== -->
+
+        <section class="glass-panel motion-reveal">
+
+            <h2>
+                Professional Certification
+            </h2>
+
+
+            <div class="cert-layout">
+
+                <div>
+
+                    <img
+                        src="security_plus.jpg"
+                        alt="CompTIA Security+ certification"
+                        class="cert-img"
+                    >
+
                 </div>
-            </section>
-        </div>
+
+
+                <div class="cert-details">
+
+                    <h3>
+                        CompTIA Security+ (SY0-701)
+                    </h3>
+
+                    <p>
+
+                        Certified cybersecurity professional with
+                        foundational expertise in network security,
+                        risk management, threat mitigation,
+                        and enterprise defense.
+
+                    </p>
+
+                    <div class="cert-meta">
+
+                        CompTIA Security+<br>
+                        Certification: SY0-701
+
+                    </div>
+
+
+                    <a
+                        href="https://verify.comptia.org/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-seamless"
+                    >
+                        Verify Credential
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             PROJECTS
+        ================================================== -->
+
+        <section class="glass-panel motion-reveal">
+
+            <h2>
+                Projects & Security Research
+            </h2>
+
+            <p class="projects-intro">
+
+                Selected cybersecurity projects, implementations,
+                and academic security research.
+
+            </p>
+
+            <p class="scroll-hint">
+                Swipe to explore →
+            </p>
+
+
+            <div class="motion-gallery">
+
+
+                <!-- =================================================
+                     PROJECT 1 — CYBERRUN
+                ================================================== -->
+
+                <div class="motion-card">
+
+                    <div class="card-preview">
+
+                        <span class="badge">
+                            Live Platform
+                        </span>
+
+                        <img
+                            src="project_cyberrun.png"
+                            alt="CyberRun Academy project preview"
+                        >
+
+                        <div class="preview-overlay"></div>
+
+                    </div>
+
+
+                    <div class="card-body">
+
+                        <div>
+
+                            <h3>
+                                CyberRun Academy
+                            </h3>
+
+                            <p>
+
+                                Interactive cybersecurity learning
+                                platform featuring immersive
+                                "War Room" labs for Incident
+                                Response training.
+
+                            </p>
+
+                        </div>
+
+
+                        <a
+                            href="https://unsadeem2-pixel.github.io/CyberRun/index.html"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn-seamless project-button"
+                        >
+                            Preview Live
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     PROJECT 2 — DES
+                ================================================== -->
+
+                <div class="motion-card">
+
+                    <div class="card-preview pdf-preview">
+
+                        <span class="badge">
+                            Research Paper
+                        </span>
+
+                        <iframe
+                            src="DES Algorithm Project Report.pdf#page=1&toolbar=0&navpanes=0&scrollbar=0"
+                            title="DES Cryptography project report preview"
+                            scrolling="no"
+                        ></iframe>
+
+                        <div class="preview-overlay"></div>
+
+                    </div>
+
+
+                    <div class="card-body">
+
+                        <div>
+
+                            <h3>
+                                DES Cryptography
+                            </h3>
+
+                            <p>
+
+                                Comprehensive Java implementation
+                                of the DES algorithm in ECB mode
+                                for secure text encryption.
+
+                            </p>
+
+                        </div>
+
+
+                        <a
+                            href="DES Algorithm Project Report.pdf"
+                            target="_blank"
+                            class="btn-seamless project-button"
+                        >
+                            Read Paper
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     PROJECT 3 — WINDOWS SECURITY
+                ================================================== -->
+
+                <div class="motion-card">
+
+                    <div class="card-preview pdf-preview">
+
+                        <span class="badge">
+                            Analysis
+                        </span>
+
+                        <iframe
+                            src="OsProject 1.pdf#page=1&toolbar=0&navpanes=0&scrollbar=0"
+                            title="Windows OS Security project report preview"
+                            scrolling="no"
+                        ></iframe>
+
+                        <div class="preview-overlay"></div>
+
+                    </div>
+
+
+                    <div class="card-body">
+
+                        <div>
+
+                            <h3>
+                                Windows OS Security
+                            </h3>
+
+                            <p>
+
+                                Comparative analysis evaluating
+                                the security evolution from
+                                Windows 1.0 through Windows 11.
+
+                            </p>
+
+                        </div>
+
+
+                        <a
+                            href="OsProject 1.pdf"
+                            target="_blank"
+                            class="btn-seamless project-button"
+                        >
+                            Read Paper
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     PROJECT 4 — SOFTWARE SECURITY LABS
+                ================================================== -->
+
+                <div class="motion-card">
+
+                    <div class="card-preview pdf-preview">
+
+                        <span class="badge">
+                            Lab Report
+                        </span>
+
+                        <iframe
+                            src="LabReport.pdf#page=1&toolbar=0&navpanes=0&scrollbar=0"
+                            title="Software Security Labs report preview"
+                            scrolling="no"
+                        ></iframe>
+
+                        <div class="preview-overlay"></div>
+
+                    </div>
+
+
+                    <div class="card-body">
+
+                        <div>
+
+                            <h3>
+                                Software Security Labs
+                            </h3>
+
+                            <p>
+
+                                A collection of software security
+                                labs covering SQL injection
+                                mitigation, secure authentication,
+                                MFA, SHA-256 integrity checks,
+                                and secure coding practices.
+
+                            </p>
+
+                        </div>
+
+
+                        <a
+                            href="LabReport.pdf"
+                            target="_blank"
+                            class="btn-seamless project-button"
+                        >
+                            Read Report
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
     </div>
 
-    <!-- Middle Gap -->
-    <div class="color-gap">
-        <div class="container">
-            <section class="glass-panel motion-reveal">
-                <h2>Leadership & Experience</h2>
-                <div class="grid-layout">
-                    
-                    <div class="info-card">
-                        <h3>Design Dept Leader</h3>
-                        <p class="card-subtitle">Cyber She Community</p>
-                        <p style="margin-bottom: 1.2rem;">Directed the design department throughout 2024, driving visual branding and community engagement in cybersecurity[cite: 1, 6].</p>
-                        <a href="https://www.linkedin.com/company/cyber-she/" target="_blank" class="btn-seamless" style="padding: 0.4rem 1rem; font-size: 0.78rem;">View Platform</a>
-                    </div>
+</div>
 
-                    <div class="info-card">
-                        <h3>Java Programming Instructor</h3>
-                        <p class="card-subtitle">Tmyyoz Platform</p>
-                        <p>Mentored students through Java 1, OOP principles, and clean code standards while simplifying algorithmic thinking[cite: 1].</p>
-                    </div>
 
-                    <div class="info-card">
-                        <h3>CTF Competitor</h3>
-                        <p class="card-subtitle">Cyber Arcade - Jeddah University</p>
-                        <p>Active participant in competitive Capture The Flag events specializing in OSINT and Web Exploitation[cite: 3].</p>
-                    </div>
+<!-- =========================================================
+     MIDDLE SECTION
+========================================================== -->
 
-                    <div class="info-card">
-                        <h3>Technical Workshops</h3>
-                        <p class="card-subtitle">Continuous Learning</p>
-                        <p>Completed intensive training in Linux file systems (Cyber Guard)[cite: 8] and cybersecurity fundamentals (Saudi Developers Community)[cite: 5].</p>
-                    </div>
+<div class="color-gap">
+
+    <div class="container">
+
+
+        <!-- =================================================
+             LEADERSHIP & EXPERIENCE
+        ================================================== -->
+
+        <section class="glass-panel motion-reveal">
+
+            <h2>
+                Leadership & Experience
+            </h2>
+
+
+            <div class="grid-layout">
+
+
+                <!-- Cyber She -->
+
+                <div class="info-card">
+
+                    <h3>
+                        Design Dept Leader
+                    </h3>
+
+                    <p class="card-subtitle">
+                        Cyber She Community
+                    </p>
+
+                    <p>
+
+                        Directed the design department throughout
+                        2024, driving visual branding, project
+                        coordination, and community engagement
+                        in cybersecurity.
+
+                    </p>
+
+
+                    <a
+                        href="https://www.linkedin.com/company/cyber-she/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn-seamless"
+                    >
+                        View Community
+                    </a>
 
                 </div>
-            </section>
-        </div>
+
+
+                <!-- Java -->
+
+                <div class="info-card">
+
+                    <h3>
+                        Java Programming Instructor
+                    </h3>
+
+                    <p class="card-subtitle">
+                        Tmyyoz Platform
+                    </p>
+
+                    <p>
+
+                        Mentored students through Java 1,
+                        Object-Oriented Programming principles,
+                        and clean code standards while simplifying
+                        algorithmic thinking.
+
+                    </p>
+
+                </div>
+
+
+                <!-- CTF -->
+
+                <div class="info-card">
+
+                    <h3>
+                        CTF Competitor
+                    </h3>
+
+                    <p class="card-subtitle">
+                        Cyber Arcade — Jeddah University
+                    </p>
+
+                    <p>
+
+                        Active participant in competitive
+                        Capture The Flag events with a focus
+                        on OSINT and Web Exploitation.
+
+                    </p>
+
+                </div>
+
+
+                <!-- Workshops -->
+
+                <div class="info-card">
+
+                    <h3>
+                        Technical Workshops
+                    </h3>
+
+                    <p class="card-subtitle">
+                        Continuous Learning
+                    </p>
+
+                    <p>
+
+                        Completed intensive cybersecurity
+                        training and technical workshops covering
+                        Linux file systems, cybersecurity
+                        fundamentals, and practical security skills.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
     </div>
 
-    <!-- Bottom Parallax -->
-    <div class="parallax-bottom">
-        <div class="container">
-            <section class="glass-panel motion-reveal">
-                <h2>Core Competencies & Soft Skills</h2>
-                <div class="skills-flex" style="margin-bottom: 1.8rem;">
-                    <span class="skill-pill">Cyber Defense</span>
-                    <span class="skill-pill">Risk Management</span>
-                    <span class="skill-pill">Network Security</span>
-                    <span class="skill-pill">Incident Response</span>
-                    <span class="skill-pill">Python & Java</span>
-                    <span class="skill-pill">SQL & Flask</span>
-                    <span class="skill-pill">Wireshark & Nmap</span>
-                    <span class="skill-pill">Burp Suite</span>
-                    <span class="skill-pill">Linux Administration</span>
-                </div>
-                <h3 style="font-size: 1.1rem; font-weight: 400; margin-bottom: 0.8rem; color: #fff;">Soft Skills</h3>
+</div>
+
+
+<!-- =========================================================
+     BOTTOM SECTION
+========================================================== -->
+
+<div class="parallax-bottom">
+
+    <div class="container">
+
+
+        <!-- =================================================
+             SKILLS
+        ================================================== -->
+
+        <section class="glass-panel motion-reveal">
+
+            <h2>
+                Core Competencies & Skills
+            </h2>
+
+
+            <!-- Cybersecurity -->
+
+            <div class="skills-category">
+
+                <h3>
+                    Cybersecurity
+                </h3>
+
                 <div class="skills-flex">
-                    <span class="skill-pill">Leadership</span>
-                    <span class="skill-pill">Technical Mentoring</span>
-                    <span class="skill-pill">Strategic Thinking</span>
-                    <span class="skill-pill">Presentation</span>
+
+                    <span class="skill-pill">
+                        Cyber Defense
+                    </span>
+
+                    <span class="skill-pill">
+                        Risk Management
+                    </span>
+
+                    <span class="skill-pill">
+                        Network Security
+                    </span>
+
+                    <span class="skill-pill">
+                        Incident Response
+                    </span>
+
+                    <span class="skill-pill">
+                        Web Security
+                    </span>
+
+                    <span class="skill-pill">
+                        Vulnerability Analysis
+                    </span>
+
                 </div>
-            </section>
-        </div>
+
+            </div>
+
+
+            <!-- Programming -->
+
+            <div class="skills-category">
+
+                <h3>
+                    Programming & Development
+                </h3>
+
+                <div class="skills-flex">
+
+                    <span class="skill-pill">
+                        Python
+                    </span>
+
+                    <span class="skill-pill">
+                        Java
+                    </span>
+
+                    <span class="skill-pill">
+                        SQL
+                    </span>
+
+                    <span class="skill-pill">
+                        Flask
+                    </span>
+
+                    <span class="skill-pill">
+                        HTML / CSS / JavaScript
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Tools -->
+
+            <div class="skills-category">
+
+                <h3>
+                    Security Tools
+                </h3>
+
+                <div class="skills-flex">
+
+                    <span class="skill-pill">
+                        Wireshark
+                    </span>
+
+                    <span class="skill-pill">
+                        Nmap
+                    </span>
+
+                    <span class="skill-pill">
+                        Burp Suite
+                    </span>
+
+                    <span class="skill-pill">
+                        Linux
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Soft Skills -->
+
+            <div class="skills-category">
+
+                <h3>
+                    Soft Skills
+                </h3>
+
+                <div class="skills-flex">
+
+                    <span class="skill-pill">
+                        Leadership
+                    </span>
+
+                    <span class="skill-pill">
+                        Technical Mentoring
+                    </span>
+
+                    <span class="skill-pill">
+                        Strategic Thinking
+                    </span>
+
+                    <span class="skill-pill">
+                        Presentation
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =================================================
+             CONTACT
+        ================================================== -->
+
+        <section class="glass-panel motion-reveal contact-section">
+
+            <h2>
+                Let's Connect
+            </h2>
+
+            <p>
+
+                Interested in cybersecurity, collaboration,
+                internships, or technical opportunities?
+
+            </p>
+
+
+            <div class="contact-links">
+
+                <a
+                    href="https://www.linkedin.com/in/lama-aljohani-7b3707290/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-seamless"
+                >
+                    LinkedIn
+                </a>
+
+
+    
+
+                <!-- Replace with your professional email -->
+
+                <a
+                    href="mailto:lama.aljohani002@gmail.com"
+                    class="btn-seamless"
+                >
+                    Email
+                </a>
+
+            </div>
+
+        </section>
+
+
     </div>
 
-    <!-- Scroll Observer Script for Entrance Animations -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================== -->
+
+<footer>
+
+    © 2026 Lama Aljohani · Cybersecurity Portfolio
+
+</footer>
+
+
+<!-- =========================================================
+     SCROLL OBSERVER
+========================================================== -->
+
+<script>
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        function () {
+
             const observerOptions = {
                 root: null,
-                rootMargin: '0px',
+
+                rootMargin: "0px",
+
                 threshold: 0.12
             };
 
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
 
-            const revealElements = document.querySelectorAll('.motion-reveal');
-            revealElements.forEach(el => observer.observe(el));
-        });
-    </script>
+            const observer =
+                new IntersectionObserver(
+                    (entries, observer) => {
+
+                        entries.forEach(
+                            (entry) => {
+
+                                if (
+                                    entry.isIntersecting
+                                ) {
+
+                                    entry.target
+                                        .classList
+                                        .add("visible");
+
+                                    observer.unobserve(
+                                        entry.target
+                                    );
+
+                                }
+
+                            }
+                        );
+
+                    },
+                    observerOptions
+                );
+
+
+            const revealElements =
+                document.querySelectorAll(
+                    ".motion-reveal"
+                );
+
+
+            revealElements.forEach(
+                (element) => {
+
+                    observer.observe(
+                        element
+                    );
+
+                }
+            );
+
+        }
+    );
+
+</script>
+```
+
 </body>
+
 </html>

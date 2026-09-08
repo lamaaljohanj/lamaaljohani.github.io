@@ -29,7 +29,6 @@
             line-height: 1.6;
         }
 
-        /* Section Layouts with Parallax Effect */
         .parallax-top {
             background: linear-gradient(to bottom, rgba(5,3,10,0.3) 70%, var(--bg-dark) 100%), 
                         url('https://i.pinimg.com/1200x/46/0d/46/460d4645de83579c031c41332f4acad2.jpg') no-repeat center center;
@@ -40,7 +39,6 @@
         }
 
         .color-gap {
-            /* Deep ethereal gradient matching the palette */
             background: linear-gradient(180deg, var(--bg-dark) 0%, rgba(30,15,45,0.7) 50%, var(--bg-dark) 100%);
             padding: 5rem 0;
         }
@@ -60,7 +58,6 @@
             position: relative;
         }
 
-        /* Glassmorphism Panel */
         .glass-panel {
             background: var(--glass-bg);
             backdrop-filter: blur(35px) saturate(120%);
@@ -70,6 +67,7 @@
             padding: 3rem;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
             transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-bottom: 3rem;
         }
 
         .glass-panel:hover {
@@ -77,7 +75,6 @@
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(138, 43, 226, 0.15);
         }
 
-        /* Typography */
         header {
             text-align: center;
             margin-bottom: 6rem;
@@ -112,7 +109,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* Seamless Buttons */
         .btn-seamless {
             display: inline-flex;
             align-items: center;
@@ -138,7 +134,47 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
 
-        /* Top Certification Layout */
+        /* Profile Summary Box */
+        .summary-box {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        @media(max-width: 768px) {
+            .education-grid { grid-template-columns: 1fr; }
+        }
+
+        .edu-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
+            padding: 1.5rem;
+            border-radius: 16px;
+        }
+
+        .edu-item h4 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #fff;
+            margin-bottom: 0.4rem;
+        }
+
+        .edu-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        /* Cert Layout */
         .cert-layout {
             display: grid;
             grid-template-columns: 1fr 1.5fr;
@@ -160,7 +196,6 @@
 
         .cert-img:hover {
             transform: scale(1.03);
-            box-shadow: 0 20px 45px rgba(0,0,0,0.5);
         }
 
         .cert-details h3 {
@@ -184,7 +219,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* Motion Gallery for Projects */
+        /* Motion Gallery */
         .motion-gallery {
             display: flex;
             gap: 2rem;
@@ -192,13 +227,9 @@
             padding: 1rem 0.5rem 2rem;
             scroll-snap-type: x mandatory;
             scroll-behavior: smooth;
-            -ms-overflow-style: none;
             scrollbar-width: none;
         }
-
-        .motion-gallery::-webkit-scrollbar {
-            display: none;
-        }
+        .motion-gallery::-webkit-scrollbar { display: none; }
 
         .motion-card {
             min-width: 360px;
@@ -214,15 +245,12 @@
             position: relative;
         }
 
-        @media(max-width: 768px) {
-            .motion-card { min-width: 300px; }
-        }
+        @media(max-width: 768px) { .motion-card { min-width: 300px; } }
 
         .motion-card:hover {
             background: rgba(255, 255, 255, 0.06);
             border-color: var(--glass-highlight);
             transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
         }
 
         .card-preview {
@@ -263,9 +291,7 @@
             padding: 4px 14px;
             border-radius: 20px;
             font-size: 0.75rem;
-            font-weight: 400;
             color: #fff;
-            letter-spacing: 0.5px;
         }
 
         .card-body {
@@ -289,7 +315,6 @@
             margin-bottom: 2rem;
         }
 
-        /* Grid Layout for Leadership */
         .grid-layout {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -330,7 +355,6 @@
             font-size: 0.95rem;
         }
 
-        /* Skills Flex */
         .skills-flex {
             display: flex;
             flex-wrap: wrap;
@@ -346,7 +370,6 @@
             font-size: 0.95rem;
             font-weight: 300;
             transition: 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
         .skill-pill:hover {
@@ -368,12 +391,11 @@
             margin-bottom: 1rem;
             font-weight: 300;
         }
-
     </style>
 </head>
 <body>
 
-    <!-- Top Section: Header, Certification & Projects -->
+    <!-- Top Section -->
     <div class="parallax-top">
         <div class="container">
             
@@ -383,7 +405,26 @@
                 <a href="cv.pdf" target="_blank" class="btn-seamless">Download Resume</a>
             </header>
 
-            <section class="glass-panel" style="margin-bottom: 3rem;">
+            <!-- Objective & Education Section -->
+            <section class="glass-panel">
+                <h2>Profile & Education</h2>
+                <p class="summary-box">
+                    Highly motivated Cybersecurity student with an outstanding academic record, passionate about proactive defense, threat analysis, and building secure software architectures.
+                </p>
+                <div class="education-grid">
+                    <div class="edu-item">
+                        <h4>Taibah University</h4>
+                        <p>Bachelor in Cybersecurity<br>GPA: Excellent</p>
+                    </div>
+                    <div class="edu-item">
+                        <h4>Languages</h4>
+                        <p>Arabic (Native)<br>English (Upper-Intermediate — STEP Score: 88)</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Professional Certification -->
+            <section class="glass-panel">
                 <h2>Professional Certification</h2>
                 <div class="cert-layout">
                     <div>
@@ -394,13 +435,13 @@
                         <p>Certified professional with proven expertise in network architecture, risk management, threat mitigation, and proactive enterprise defense.</p>
                         <div class="cert-meta">
                             Candidate ID: COMP001022977471 <br>
-                            Issued: Jan 27, 2026 — Expires: Jan 27, 2029
                         </div>
                         <a href="http://verify.CompTIA.org" target="_blank" class="btn-seamless">Verify Credential</a>
                     </div>
                 </div>
             </section>
 
+            <!-- Motion Gallery -->
             <section class="glass-panel">
                 <h2>Projects & Security Research</h2>
                 <p class="scroll-hint">Swipe to explore horizontally</p>
@@ -466,7 +507,7 @@
         </div>
     </div>
 
-    <!-- Middle Section: Color Gap & Leadership -->
+    <!-- Middle Section: Color Gap -->
     <div class="color-gap">
         <div class="container">
             <section class="glass-panel">
@@ -503,12 +544,12 @@
         </div>
     </div>
 
-    <!-- Bottom Section: Core Competencies -->
+    <!-- Bottom Section -->
     <div class="parallax-bottom">
         <div class="container">
             <section class="glass-panel">
-                <h2>Core Competencies</h2>
-                <div class="skills-flex">
+                <h2>Core Competencies & Soft Skills</h2>
+                <div class="skills-flex" style="margin-bottom: 2rem;">
                     <span class="skill-pill">Cyber Defense</span>
                     <span class="skill-pill">Risk Management</span>
                     <span class="skill-pill">Network Security</span>
@@ -518,6 +559,13 @@
                     <span class="skill-pill">Wireshark & Nmap</span>
                     <span class="skill-pill">Burp Suite</span>
                     <span class="skill-pill">Linux Administration</span>
+                </div>
+                <h3 style="font-size: 1.2rem; font-weight: 400; margin-bottom: 1rem; color: #fff;">Soft Skills</h3>
+                <div class="skills-flex">
+                    <span class="skill-pill">Leadership</span>
+                    <span class="skill-pill">Technical Mentoring</span>
+                    <span class="skill-pill">Strategic Thinking</span>
+                    <span class="skill-pill">Presentation</span>
                 </div>
             </section>
         </div>
